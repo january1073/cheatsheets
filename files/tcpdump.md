@@ -164,15 +164,6 @@ tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[
 tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0) and (tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x504f5354)'
 ```
 
-## Security Considerations
-- Running tcpdump requires root/administrator privileges
-- Silent capturing can be done by redirecting output to /dev/null:
-  ```bash
-  tcpdump -i eth0 -w capture.pcap >/dev/null 2>&1
-  ```
-- Capture files can be analyzed later with tools like Wireshark
-- Be aware of legal and ethical implications when capturing network traffic
-
 ## Tips
 - Running tcpdump requires root/administrator privileges
 - Always use `-n` for faster performance when hostname resolution isn't needed
@@ -183,4 +174,3 @@ tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[
 - Use `-s 0` to capture full packets (default is 262144 bytes)
 - Use `-c` to limit capture size when testing filters
 - Combine multiple expressions for precise targeting
-- Use `-v`, `-vv`, or `-vvv` for increasing levels of detail
