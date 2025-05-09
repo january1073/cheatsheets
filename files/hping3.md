@@ -1,4 +1,4 @@
-<a href="https://github.com/january1073/cheatsheets/tree/main">All cheatsheets</a>
+[ <a href="https://github.com/january1073/cheatsheets/tree/main">more</a> ]
 
 # Cheatsheet: hping3
 
