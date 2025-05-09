@@ -174,8 +174,16 @@ tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[
 - Be aware of legal and ethical implications when capturing network traffic
 
 ## Tips
+- Running tcpdump requires root/administrator privileges
 - Always use `-n` for faster performance when hostname resolution isn't needed
+- Silent capturing can be done by redirecting output to /dev/null:
+  ```bash
+  tcpdump -i eth0 -w capture.pcap >/dev/null 2>&1
+  ```
 - Use `-s 0` to capture full packets (default is 262144 bytes)
 - Use `-c` to limit capture size when testing filters
 - Combine multiple expressions for precise targeting
 - Use `-v`, `-vv`, or `-vvv` for increasing levels of detail
+
+## Security Notice
+tcpdump is a powerful tool intended for network analysis. Always use responsibly and only on networks you own or have explicit permission to analyze.
