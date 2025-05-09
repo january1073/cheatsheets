@@ -158,6 +158,3 @@ hping3 -c 1000 -i u100000 target.host
 # Send random-sized packets
 hping3 --rand-source -d 120 target.host
 ```
-
-## Security Notice
-Hping3 is a powerful tool intended for network analysis and testing. Always use responsibly and only on networks you own or have explicit permission to test.
