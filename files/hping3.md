@@ -1,6 +1,6 @@
 # Cheatsheet: hping3
 
-## Basic Syntax
+## Syntax
 ```
 hping3 [options] target
 ```
