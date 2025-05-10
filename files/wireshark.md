@@ -2,8 +2,6 @@
 
 # Security-Focused Display Filter Expressions for Wireshark
 
-[DFILTER file](https://raw.githubusercontent.com/january1073/cheatsheets/main/files/wireshark.dfilter)
-
 | Category | Filter Expression | Description |
 |----------|-------------------|-------------|
 | **SSH Attacks** | `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 22` | Potential SSH password brute force - identifies SYN packets to SSH without corresponding ACK, indicating connection attempts |
