@@ -1,4 +1,4 @@
-[100s Series](https://github.com/january1073/100s_series)
+[> 100s Series](https://github.com/january1073/100s_series)
 
 # Cheatsheets
 
