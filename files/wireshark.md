@@ -1,4 +1,4 @@
-[ <a href="https://github.com/january1073/cheatsheets/tree/main">Cheatsheets</a> ]
+[← Back](../README.md)
 
 # Wireshark Display Filters
 
@@ -53,5 +53,3 @@
 - Suspicious DNS exfiltration: `dns.qry.name.len > 50 and dns.qry.type == 16`
 - Password spraying detection: `ntlmssp.auth.username and (ntlmssp.ntlmv2.response.len > 0 or ntlmssp.auth.lmresponse.len > 0)`
 - Clear-text credentials: `http.request and (http.authorization or http.proxy_authorization)`
-
-[ <a href="https://github.com/january1073/cheatsheets/tree/main">Cheatsheets</a> ]
