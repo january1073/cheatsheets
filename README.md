@@ -1,4 +1,4 @@
-[100s Series](https://github.com/january1073/100s_series/edit/main/README.md)
+[100s Series](https://github.com/january1073/100s_series/main/README.md)
 
 # Cheatsheets
 
