@@ -1,0 +1,35 @@
+# Wireshark security-focused display filters
+"SSH Brute Force" tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 22
+"SSH Auth Failures" ssh.message_code == 51
+"SMB Auth Attempts" ntlmssp.auth.username
+"SMB Session Setup" smb.cmd == 0x73
+"SMB2 Session Setup" smb2.cmd == 1
+"HTTP Basic Auth" http.authorization contains "Basic"
+"HTTP NTLM Auth" http.authorization contains "NTLM"
+"HTTP Auth Challenges" http.www_authenticate
+"SSL/TLS Alerts" ssl.alert
+"SSL Certificates" ssl.handshake.certificate
+"SSL on Non-Standard Ports" ssl.handshake.type == 2 and !(tcp.port == 443)
+"DNS on Non-Standard Ports" dns and not udp.port == 53
+"DNS TXT Queries" dns.qry.type == 16
+"DNS Error Responses" dns.flags.rcode != 0
+"Curl User-Agent" http.user_agent contains "curl"
+"Metasploit Default Port" tcp.port == 4444
+"Low TTL Values" ip.ttl < 10
+"SYN Scan" tcp.flags.syn == 1 and tcp.flags.ack == 0
+"FIN Scan" tcp.flags.fin == 1 and tcp.flags.ack == 0
+"XMAS Scan" tcp.flags == 0x29
+"ARP Duplicate Address" arp.duplicate-address-detected
+"ARP MAC Mismatch" arp.src.hw_mac != eth.src
+"SMB Trans2 Commands" smb.cmd == 37
+"EternalBlue Exploit" dcerpc.cn_call_id == 0x1a
+"FTP Data Transfers" ftp-data
+"HTTP POST Requests" http.request.method == "POST"
+"HTTP File Uploads" http.content_type contains "multipart/form-data"
+"Large DNS Responses" dns.resp.len > 100
+"PHP Parameter Requests" http.request.uri contains ".php?"
+"ICMP Tunneling" icmp.type == 8 and data.len > 64
+"External SSH Brute Force" tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 22 and ip.src != 192.168.0.0/16
+"DNS Exfiltration" dns.qry.name.len > 50 and dns.qry.type == 16
+"Password Spray" ntlmssp.auth.username and (ntlmssp.ntlmv2.response.len > 0 or ntlmssp.auth.lmresponse.len > 0)
+"Clear-Text Credentials" http.request and (http.authorization or http.proxy_authorization)
