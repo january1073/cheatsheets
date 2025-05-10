@@ -19,5 +19,10 @@
       <td>Command-line packet analyzer; useful for network troubleshooting and security analysis</td>
       <td><a href="https://github.com/january1073/cheatsheets/blob/main/files/tcpdump.md"_blank">Cheatsheet</a></td>
     </tr>
+    <tr>
+      <td>Wireshark</td>
+      <td>GUI-based packet analyzer; useful for in-depth network protocol analysis, real-time traffic capture, and troubleshooting complex network issues</td>
+      <td><a href="https://github.com/january1073/cheatsheets/blob/main/files/tcpdump.md"_blank">Cheatsheet</a></td>
+    </tr>
   </tbody>
 </table>
