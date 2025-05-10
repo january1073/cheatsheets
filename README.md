@@ -1,6 +1,6 @@
-[★ 100s Series](https://github.com/january1073/100s_series)
+[100s Series](https://github.com/january1073/100s_series)
 
-# ✪ Cheatsheets
+# Cheatsheets
 
 Last update: 2025-05-10
 
