@@ -1,6 +1,6 @@
 [ <a href="https://github.com/january1073/cheatsheets/tree/main">Cheatsheets</a> ]
 
-# Wireshark Security-Focused Display Filters
+# Wireshark Display Filters
 
 | Category | Filter Expression | Description |
 |----------|-------------------|-------------|
