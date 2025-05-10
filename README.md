@@ -28,7 +28,7 @@ Last update: 2025-05-10
       <td>Wireshark</td>
       <td>GUI-based packet analyzer; useful for in-depth network protocol analysis, real-time traffic capture, and troubleshooting complex network issues</td>
       <td>4.2.6</td>
-      <td><a href="https://github.com/january1073/cheatsheets/blob/main/files/wireshark.md"_blank">Cheatsheet (including DFILTER file)</a></td>
+      <td><a href="https://github.com/january1073/cheatsheets/blob/main/files/wireshark.md"_blank">Cheatsheet</a></td>
     </tr>
   </tbody>
 </table>
