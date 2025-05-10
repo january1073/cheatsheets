@@ -1,4 +1,4 @@
-[ <a href="https://github.com/january1073/cheatsheets/tree/main">Cheatsheets</a> ]
+[Back](../README.md)
 
 # tcpdump
 
@@ -174,5 +174,3 @@ tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[
 - Use `-s 0` to capture full packets (default is 262144 bytes)
 - Use `-c` to limit capture size when testing filters
 - Combine multiple expressions for precise targeting
-
-[ <a href="https://github.com/january1073/cheatsheets/tree/main">Cheatsheets</a> ]
