@@ -2,7 +2,7 @@
 
 # Wireshark Display Filters
 
-[Download filters as DFILTER file](https://raw.githubusercontent.com/january1073/cheatsheets/main/files/wireshark.dfilter)
+[Download filters as DFILTER file](https://raw.githubusercontent.com/january1073/cheatsheets/main/files/wireshark.dfilter) (save link as ...)
 
 | Category | Filter Expression | Description |
 |----------|-------------------|-------------|
