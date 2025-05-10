@@ -1,6 +1,6 @@
 [⬅ Back](../README.md)
 
-# Wireshark Display Filters
+# Security-Focused Display Filter Expressions for Wireshark
 
 [DFILTER file](https://raw.githubusercontent.com/january1073/cheatsheets/main/files/wireshark.dfilter)
 
