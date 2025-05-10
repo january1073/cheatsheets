@@ -1,4 +1,4 @@
-# Wireshark security-focused display filters
+# Security-focused Wireshark display filters by january1073
 "SSH Brute Force" tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 22
 "SSH Auth Failures" ssh.message_code == 51
 "SMB Auth Attempts" ntlmssp.auth.username
