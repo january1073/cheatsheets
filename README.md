@@ -1,2 +1,7 @@
-# cheatsheets
-Cheatsheets
+# Cheatsheets
+
+| Tool       | Description | Tactics      | Version         | Cheatsheet |
+|:-----------|:------------|:-------------|:----------------|:-----------|
+| **hping3** | Command-line packet generator and analyzer; useful for firewall testing, scanning, and simulating network attacks | ![Reconnaissance](https://img.shields.io/badge/Reconnaissance-Crimson?style=flat-square) ![Resource Development](https://img.shields.io/badge/Resource%20Development-Crimson?style=flat-square) ![Command and Control](https://img.shields.io/badge/Command%20and%20Control-Crimson?style=flat-square) ![Defense Evasion](https://img.shields.io/badge/Defense%20Evasion-Crimson?style=flat-square) | 3.0.0-alpha-2 | [hping3](https://github.com/january1073/cheatsheets/blob/main/files/hping3.md) |
+| **tcpdump** | Command-line packet analyzer; useful for network troubleshooting and security analysis | ![Discovery](https://img.shields.io/badge/Discovery-Crimson?style=flat-square) ![Collection](https://img.shields.io/badge/Collection-Crimson?style=flat-square) ![Credential Access](https://img.shields.io/badge/Credential%20Access-Crimson?style=flat-square) | 4.99.4 | [tcpdump](https://github.com/january1073/cheatsheets/blob/main/files/tcpdump.md) |
+| **Wireshark** | GUI-based packet analyzer; useful for in-depth network protocol analysis, real-time traffic capture, and troubleshooting complex network issues | ![Discovery](https://img.shields.io/badge/Discovery-Crimson?style=flat-square) ![Collection](https://img.shields.io/badge/Collection-Crimson?style=flat-square) ![Credential Access](https://img.shields.io/badge/Credential%20Access-Crimson?style=flat-square) | 4.2.6 | [Wireshark](https://github.com/january1073/cheatsheets/blob/main/files/wireshark.md) |
