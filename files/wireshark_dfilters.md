@@ -1,4 +1,5 @@
 # Wireshark Display Filters (Examples)
+![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white)
 
 ## Authentication & Credentials
 
@@ -167,4 +168,4 @@
 | Curl user-agent | http.user_agent contains "curl" |
 | Security tool user-agents | http.user_agent matches "(sqlmap\|nikto\|nmap\|acunetix\|fuzz\|dirbuster)" |
 
-Engage through this interface: https://linktr.ee/january1073
+Reach out: https://linktr.ee/january1073

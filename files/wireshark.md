@@ -1,4 +1,5 @@
 # Wireshark Cheatsheet
+![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white)
 
 ## Installation
 
@@ -191,4 +192,4 @@ Verify with: `getcap /usr/bin/dumpcap` (should return `/usr/bin/dumpcap = cap_ne
 - Look for unusual patterns (high volumes, odd ports, unexpected protocols)
 - More display filter expressions here: [Wireshark Display Filters (Examples)]
 
-Engage through this interface: https://linktr.ee/january1073
+Reach out: https://linktr.ee/january1073

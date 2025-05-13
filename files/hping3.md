@@ -1,4 +1,5 @@
 # hping3 Cheatsheet
+![Command and Control](https://img.shields.io/badge/Command%20and%20Control-DC143C?style=flat-square&logoColor=white) ![Defense Evasion](https://img.shields.io/badge/Defense%20Evasion-DC143C?style=flat-square&logoColor=white) ![Reconnaissance](https://img.shields.io/badge/Reconnaissance-DC143C?style=flat-square&logoColor=white) ![Resource Development](https://img.shields.io/badge/Resource%20Development-DC143C?style=flat-square&logoColor=white)
 
 ## Basic Information
 
@@ -213,4 +214,4 @@
 | Display with timestamps | hping3 -S -p 80 -Z target.host |
 | Verbose IP information | hping3 -S -p 80 -V target.host |
 
-Engage through this interface: https://linktr.ee/january1073
+Reach out: https://linktr.ee/january1073

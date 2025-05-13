@@ -1,4 +1,5 @@
 # tcpdump Cheatsheet
+![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white)
 
 ## Basic Information
 
@@ -181,4 +182,4 @@
 | Split captures into multiple files | tcpdump -w capture_%Y-%m-%d_%H:%M:%S.pcap -G 3600 |
 | Rotate capture files | tcpdump -w capture.pcap -C 1 -W 10 |
 
-Engage through this interface: https://linktr.ee/january1073
+Reach out: https://linktr.ee/january1073
