@@ -1,139 +1,194 @@
-# Wireshark Display Filters Cheatsheet
+# Wireshark Cheatsheet
 
-## Table of contents
-- [Network reconnaissance](#network-reconnaissance)
-- [Authentication & credentials](#authentication--credentials)
-- [Scanning techniques](#scanning-techniques)
-- [DNS analysis](#dns-analysis)
-- [Malware & command and control](#malware--command-and-control)
-- [Lateral movement](#lateral-movement)
-- [Protocol exploits](#protocol-exploits)
-- [Data exfiltration](#data-exfiltration)
-- [Web application analysis](#web-application-analysis)
-- [Suspicious traffic patterns](#suspicious-traffic-patterns)
+## Installation
 
-## Network reconnaissance
+### Linux Installation Commands
 
-### ARP analysis
-- ARP spoofing detection: `arp.duplicate-address-detected`
-- MAC address mismatch: `arp.src.hw_mac != eth.src`
+| Distribution | Command |
+|--------------|---------|
+| Debian-based | `sudo apt install wireshark` |
+| Fedora-based | `sudo dnf install wireshark` |
+| Arch-based   | `sudo pacman -S wireshark-qt` |
 
-### LDAP/Active Directory recon
-- LDAP bind requests: `ldap.message == 0 or ldap.bindRequest`
-- LDAP search requests: `ldap.searchRequest`
+### Configure Non-Root Packet Capture (Linux)
 
-### Service discovery
-- SSL certificates: `ssl.handshake.certificate`
-- SSL on non-standard ports: `ssl.handshake.type == 2 and !(tcp.port == 443)`
-- SSL/TLS alerts: `ssl.alert`
+```bash
+sudo groupadd wireshark
+sudo usermod -aG wireshark $USER
+sudo chgrp wireshark /usr/bin/dumpcap
+sudo chmod 750 /usr/bin/dumpcap
+sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/dumpcap
+newgrp wireshark
+```
 
-## Authentication & credentials
+Verify with: `getcap /usr/bin/dumpcap` (should return `/usr/bin/dumpcap = cap_net_admin,cap_net_raw=eip`)
 
-### HTTP authentication
-- Basic auth: `http.authorization contains "Basic"`
-- NTLM auth: `http.authorization contains "NTLM"`
-- WWW authentication headers: `http.www_authenticate`
-- Clear-text credentials: `http.request and (http.authorization or http.proxy_authorization)`
+### Windows Installation
+1. Download installer from https://www.wireshark.org/download.html
+2. Install WinPcap/Npcap when prompted
+3. Choose whether non-administrators can capture packets
 
-### SMB authentication
-- NTLM authentication: `ntlmssp.auth.username`
-- SMB session setup: `smb.cmd == 0x73`
-- SMBv2 session setup: `smb2.cmd == 1`
+### macOS Installation
+- Download .dmg installer from Wireshark website
+- Alternatively: `brew install --cask wireshark`
 
-### SSH authentication
-- SSH auth failures: `ssh.message_code == 51`
+## Interface Overview
 
-### SMTP authentication
-- SMTP login attempts: `smtp.auth.username`
+| Pane | Description |
+|------|-------------|
+| Packet List (Top) | Summary information for each packet (number, timestamp, source/destination, protocol, length, info) |
+| Packet Details (Middle) | Hierarchical protocol information for selected packet (Ethernet, IP, TCP/UDP, application) |
+| Packet Bytes (Bottom) | Raw hexadecimal and ASCII representation of the packet data |
 
-## Scanning techniques
+## Default Packet Colors
 
-### Port scanning
-- SYN scan: `tcp.flags.syn == 1 and tcp.flags.ack == 0`
-- FIN scan: `tcp.flags.fin == 1 and tcp.flags.ack == 0`
-- XMAS scan: `tcp.flags == 0x29`
+| Color | Traffic Type |
+|-------|-------------|
+| Light purple | TCP traffic |
+| Light blue | UDP traffic |
+| Black | TCP packets with problems |
+| Light green | HTTP traffic |
+| Dark yellow | Routing protocols |
+| Dark green | TCP handshake packets |
 
-### SSH brute force
-- SSH brute force: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 22`
-- External SSH brute force: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 22 and ip.src != 192.168.0.0/16`
+*Customize colors via View → Coloring Rules*
 
-### Password attacks
-- Password spray: `ntlmssp.auth.username and (ntlmssp.ntlmv2.response.len > 0 or ntlmssp.auth.lmresponse.len > 0)`
+## Filtering
 
-## DNS analysis
+### Filter Types
 
-### DNS anomalies
-- DNS response errors: `dns.flags.rcode != 0`
-- Long DNS query names: `dns.qry.name.len > 50 and dns.qry.type == 16`
-- DNS TXT queries: `dns.qry.type == 16`
-- Suspicious DNS names: `dns.qry.name matches "[a-z0-9]{20,}"`
-- DNS on non-standard port: `dns and not udp.port == 53`
-- Large DNS responses: `dns.resp.len > 100`
+| Filter Type | Applied | Syntax | Purpose |
+|-------------|---------|--------|---------|
+| Capture Filters | Before packets are captured | BPF syntax (like tcpdump) | Limit what's captured to save resources |
+| Display Filters | After packets are captured | Wireshark syntax | Analyze specific aspects of captured traffic |
 
-## Malware & command and control
+### Common Capture Filters
 
-### Common indicators
-- Known malware ports: `tcp.port in {4444, 5554, 6667, 12345, 31337}`
-- Specific Metasploit port: `tcp.port == 4444`
-- Beaconing behavior: `frame.time_delta < 60 and frame.time_delta > 55`
-- Low TTL values: `ip.ttl < 10`
+| Purpose | Filter |
+|---------|--------|
+| Traffic to/from specific host | `host 192.168.1.100` |
+| Web traffic only | `port 80 or port 443` |
+| DNS traffic | `port 53` |
+| Exclude broadcast/multicast | `not broadcast and not multicast` |
 
-### Tunneling
-- ICMP tunneling: `icmp.type == 8 and data.len > 64`
+### Common Display Filters
 
-### Anonymization
-- Tor traffic: `ip.geoip.country == "A1"`
+| Purpose | Filter |
+|---------|--------|
+| Filter by IP address | `ip.addr == 192.168.1.100` |
+| Filter by protocol | `http` or `dns` or `ssh` |
+| Filter by port | `tcp.port == 443` |
+| Filter by HTTP method | `http.request.method == "POST"` |
+| Filter by content | `http.request.uri contains "login"` |
 
-## Lateral movement
+### Combining Display Filters
 
-### SMB lateral movement
-- SMB IPC$ access: `smb.tree_share == "IPC$"`
+| Operator | Symbols | Example |
+|----------|---------|---------|
+| AND | `and` or `&&` | `http.request.method == "POST" and ip.addr == 192.168.1.100` |
+| OR | `or` or `\|\|` | `tcp.port == 80 or tcp.port == 443` |
+| NOT | `not` or `!` | `not arp` |
 
-### Remote service control
-- DCERPC service control: `dcerpc.cn_iface == "367abb81-9844-35f1-ad32-98f038001003"`
+### Security-Focused Filters
 
-## Protocol exploits
+| Purpose | Filter |
+|---------|--------|
+| Potential SSH brute force | `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 22` |
+| SMB password attempts | `ntlmssp.auth.username` |
+| HTTP Basic Auth | `http.authorization contains "Basic"` |
+| Certificate issues | `ssl.alert` |
+| Non-standard DNS traffic | `dns and not udp.port == 53` |
 
-### SMB exploits
-- SMB Trans2 exploits: `smb.cmd == 37`
-- Suspicious SMB errors: `smb.flags.response == 0 and smb.flags.error_code != 0`
+## Protocol Analysis
 
-### EternalBlue
-- EternalBlue exploit: `dcerpc.cn_call_id == 0x1a`
+### HTTP Analysis
 
-## Data exfiltration
+| Purpose | Filter |
+|---------|--------|
+| All HTTP traffic | `http` |
+| HTTP POST requests | `http.request.method == "POST"` |
+| Extract form data | Find HTTP POST packets and examine form fields in packet details |
 
-### File transfers
-- FTP data transfers: `ftp-data`
-- HTTP file uploads: `http.content_type contains "multipart/form-data"`
-- HTTP POST requests: `http.request.method == "POST"`
+### DNS Analysis
 
-## Web application analysis
+| Purpose | Filter |
+|---------|--------|
+| DNS queries only | `dns.flags.response == 0` |
+| DNS responses only | `dns.flags.response == 1` |
+| Potential DNS tunneling | `dns.qry.name.len > 50` |
 
-### Suspicious headers
-- X-Forwarded-For: `http.header contains "X-Forwarded-For"`
-- Local referer: `http.referer contains "127.0.0.1"`
+## Decrypting TLS Traffic
 
-### Suspicious methods
-- Uncommon HTTP methods: `http.request.method in {"PUT", "DELETE", "TRACE", "CONNECT"}`
+### SSLKEYLOGFILE Method Setup
 
-### User agent analysis
-- Curl user-agent: `http.user_agent contains "curl"`
-- Security tool user-agents: `http.user_agent matches "(sqlmap|nikto|nmap|acunetix|fuzz|dirbuster)"`
+| OS | Environment Variable | Browser Launch |
+|----|---------------------|----------------|
+| Linux (Firefox) | `export SSLKEYLOGFILE=~/.ssl-key.log` | Launch Firefox normally |
+| Linux (Chrome) | `export SSLKEYLOGFILE=~/.ssl-key.log` | `google-chrome --ssl-key-log-file=$SSLKEYLOGFILE` |
+| macOS (Firefox) | `export SSLKEYLOGFILE=~/.ssl-key.log` | Launch Firefox normally |
+| macOS (Chrome) | `export SSLKEYLOGFILE=~/.ssl-key.log` | `open /Applications/Google\ Chrome.app --args --ssl-key-log-file=$SSLKEYLOGFILE` |
+| Windows (Firefox) | PowerShell: `$env:SSLKEYLOGFILE="$HOME\ssl-key.log"` | Launch Firefox normally |
+| Windows (Chrome) | PowerShell: `$env:SSLKEYLOGFILE="$HOME\ssl-key.log"` | `Start-Process "chrome.exe" -ArgumentList "--ssl-key-log-file=$env:SSLKEYLOGFILE"` |
 
-### Malicious downloads
-- Executable downloads: `http.content_type contains "application/x-msdownload"`
-- Base64 encoded content: `http.request.uri contains "base64"`
+### Configure Wireshark for TLS Decryption
+1. Go to Edit → Preferences → Protocols → TLS
+2. Set "(Pre)-Master-Secret log filename" to your keylog file path
 
-### Common attack indicators
-- PHP parameter injection: `http.request.uri contains ".php?"`
-- WebShell activity: `http.request.uri contains "cmd=" or http.request.uri contains "exec=" or http.request.uri contains "shell="`
+## Extracting Sensitive Information
 
-## Suspicious traffic patterns
+### Authentication Protocol Filters
 
-### DoS attacks
-- SYN flood: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and ip.dst == X.X.X.X`
-- ICMP flood: `icmp.type == 8 and ip.dst == X.X.X.X`
+| Authentication Protocol | Wireshark Display Filter Expression |
+|-------------------------|-------------------------------------|
+| FTP | `ftp.request.command == "USER" or ftp.request.command == "PASS"` |
+| HTTP Basic Auth | `http.authorization contains "Basic"` |
+| HTTP Form-based Auth | `http.request.method == "POST" and http.request.uri contains "login"` |
+| IMAP | `imap.request.command == "LOGIN"` |
+| Kerberos | `kerberos` |
+| LDAP | `ldap` |
+| MySQL | `mysql` |
+| NTLM | `ntlmssp` |
+| POP3 | `pop.request.command == "USER" or pop.request.command == "PASS"` |
+| RDP (Remote Desktop) | `rdp` |
+| SIP (VoIP) | `sip.Authorization` |
+| SMB (Windows File Share) | `smb2 or smb` |
+| SNMP | `snmp` |
+| SMTP | `smtp.auth` |
+| Telnet | `telnet` |
 
-### Email attachments
-- Suspicious SMTP attachments: `smtp.attachment.filename matches "\.(exe|js|scr|vbs|jar)$"`
+### Extracting Files
+1. **HTTP**:
+   - File → Export Objects → HTTP
+   - Select files to save
+
+2. **General Method**:
+   - Right-click packet → Follow → [Protocol] Stream
+   - In new window, click "Save As"
+
+### Session Analysis
+
+| Purpose | Filter |
+|---------|--------|
+| Find cookies | `http.cookie or http.set_cookie` |
+| Follow user activity | `ip.addr == [user_ip]` |
+| Wi-Fi handshakes | `eapol` |
+
+## Statistics and Analysis Tools
+
+| Tool | Menu Location | Purpose |
+|------|---------------|---------|
+| Protocol Hierarchy | Statistics → Protocol Hierarchy | View breakdown of protocols by percentage |
+| Conversations | Statistics → Conversations | See connection summaries |
+| Endpoints | Statistics → Endpoints | List all active hosts |
+| I/O Graph | Statistics → I/O Graph | Visualize traffic patterns over time |
+| Flow Graph | Statistics → Flow Graph | See packet exchange sequences |
+
+## Tips for Security Analysis
+- Establish baseline network behavior before looking for anomalies
+- Save complex filters for reuse
+- Use color rules to highlight suspicious traffic
+- Combine protocol analysis with endpoint behavior
+- Look for unusual patterns (high volumes, odd ports, unexpected protocols)
+- More display filter expressions here: [Wireshark Display Filters (Examples)]
+
+Engage through this interface: https://linktr.ee/january1073

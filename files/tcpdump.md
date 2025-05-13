@@ -1,165 +1,184 @@
 # tcpdump Cheatsheet
 
-## Basic syntax
-```
-tcpdump [options] [expression]
-```
+## Basic Information
 
-* Running `tcpdump` requires **root/administrator privileges**
+| Description | Details |
+|-------------|---------|
+| Basic Syntax | tcpdump [options] [expression] |
+| Requirements | Requires **root/administrator privileges** |
 
-## Core options
+## Command Options
+
+### Core Options
 
 | Option | Description |
 |--------|-------------|
-| `-i <interface>` | Specify network interface to capture (e.g., eth0, wlan0) |
-| `-n` | Don't resolve hostnames |
-| `-nn` | Don't resolve hostnames or port names |
-| `-c <count>` | Exit after capturing specified number of packets |
-| `-v`, `-vv`, `-vvv` | Increase verbosity level |
-| `-X` | Show packet data in hex and ASCII |
-| `-XX` | Show Ethernet header as well as packet data |
-| `-e` | Print link-level header on each line |
-| `-S` | Print absolute TCP sequence numbers |
-| `-w <file>` | Write raw packets to file |
-| `-r <file>` | Read packets from file |
-| `-A` | Print packets in ASCII |
-| `-s <snaplen>` | Capture up to snaplen bytes per packet (0 = max available) |
-| `-t` | Don't print timestamp |
-| `-tttt` | Print timestamp in YYYY-MM-DD HH:MM:SS format |
-| `-q` | Quick output (less protocol info) |
+| -i <interface> | Specify network interface to capture (e.g., eth0, wlan0) |
+| -n | Don't resolve hostnames |
+| -nn | Don't resolve hostnames or port names |
+| -c <count> | Exit after capturing specified number of packets |
+| -s <snaplen> | Capture up to snaplen bytes per packet (0 = max available) |
+| -w <file> | Write raw packets to file |
+| -r <file> | Read packets from file |
 
-## Filter expressions
+### Output Format Options
 
-### Protocol filters
+| Option | Description |
+|--------|-------------|
+| -v, -vv, -vvv | Increase verbosity level |
+| -X | Show packet data in hex and ASCII |
+| -XX | Show Ethernet header as well as packet data |
+| -A | Print packets in ASCII |
+| -e | Print link-level header on each line |
+| -q | Quick output (less protocol info) |
+
+### Timestamp Options
+
+| Option | Description |
+|--------|-------------|
+| -t | Don't print timestamp |
+| -tttt | Print timestamp in YYYY-MM-DD HH:MM:SS format |
+| -S | Print absolute TCP sequence numbers |
+
+## Filter Expressions
+
+### Protocol Filters
+
 | Expression | Description |
 |------------|-------------|
-| `tcp` | Capture only TCP packets |
-| `udp` | Capture only UDP packets |
-| `icmp` | Capture only ICMP packets |
-| `arp` | Capture only ARP packets |
-| `ip` | Capture only IPv4 packets |
-| `ip6` | Capture only IPv6 packets |
+| tcp | Capture only TCP packets |
+| udp | Capture only UDP packets |
+| icmp | Capture only ICMP packets |
+| arp | Capture only ARP packets |
+| ip | Capture only IPv4 packets |
+| ip6 | Capture only IPv6 packets |
+| http or port 80 | Capture HTTP traffic |
+| https or port 443 | Capture HTTPS traffic |
+| dns or port 53 | Capture DNS traffic |
+| ssh or port 22 | Capture SSH traffic |
 
-### Host & network filters
+### Host & Network Filters
+
 | Expression | Description |
 |------------|-------------|
-| `host <hostname/IP>` | Capture packets involving the specified host |
-| `src host <hostname/IP>` | Capture packets from the specified source host |
-| `dst host <hostname/IP>` | Capture packets to the specified destination host |
-| `net <network/mask>` | Capture packets involving the specified network |
-| `src net <network/mask>` | Capture packets from the specified network |
-| `dst net <network/mask>` | Capture packets to the specified network |
+| host <hostname/IP> | Capture packets involving the specified host |
+| src host <hostname/IP> | Capture packets from the specified source host |
+| dst host <hostname/IP> | Capture packets to the specified destination host |
+| net <network/mask> | Capture packets involving the specified network |
+| src net <network/mask> | Capture packets from the specified network |
+| dst net <network/mask> | Capture packets to the specified network |
 
-### Port filters
+### Port Filters
+
 | Expression | Description |
 |------------|-------------|
-| `port <number>` | Capture packets involving the specified port |
-| `src port <number>` | Capture packets from the specified source port |
-| `dst port <number>` | Capture packets to the specified destination port |
-| `portrange <start>-<end>` | Capture packets involving ports in the range |
+| port <number> | Capture packets involving the specified port |
+| src port <number> | Capture packets from the specified source port |
+| dst port <number> | Capture packets to the specified destination port |
+| portrange <start>-<end> | Capture packets involving ports in the range |
 
-### Packet size filters
+### Packet Size Filters
+
 | Expression | Description |
 |------------|-------------|
-| `less <length>` | Capture packets smaller than specified length |
-| `greater <length>` | Capture packets larger than specified length |
+| less <length> | Capture packets smaller than specified length |
+| greater <length> | Capture packets larger than specified length |
 
-### Logical operators
+### Logical Operators
+
 | Operator | Description |
 |----------|-------------|
-| `and` or `&&` | Logical AND |
-| `or` or `\|\|` | Logical OR |
-| `not` or `!` | Logical NOT |
+| and or && | Logical AND |
+| or or \|\| | Logical OR |
+| not or ! | Logical NOT |
 
-## Common examples
+### TCP Flag Filters
 
-### Basic packet capturing
-```bash
-# Capture packets on default interface
-tcpdump
+| Expression | Description |
+|------------|-------------|
+| tcp[tcpflags] & tcp-syn != 0 | Capture SYN packets |
+| tcp[tcpflags] & (tcp-syn\|tcp-ack) == (tcp-syn\|tcp-ack) | Capture SYN-ACK packets |
+| tcp[tcpflags] & (tcp-push\|tcp-ack) == (tcp-push\|tcp-ack) | Capture PSH-ACK packets |
+| tcp[tcpflags] & tcp-fin != 0 | Capture FIN packets |
+| tcp[tcpflags] & tcp-rst != 0 | Capture RST packets |
 
-# Capture packets on specific interface
-tcpdump -i eth0
+## Common Use Cases
 
-# Capture specific number of packets
-tcpdump -c 10
-```
+### Basic Packet Capturing
 
-### Traffic monitoring
-```bash
-# Capture traffic from specific host
-tcpdump host 192.168.1.100
+| Purpose | Command |
+|---------|---------|
+| Capture on default interface | tcpdump |
+| Capture on specific interface | tcpdump -i eth0 |
+| Capture specific number of packets | tcpdump -c 10 |
+| Capture with no name resolution | tcpdump -nn |
 
-# Capture traffic from specific source
-tcpdump src host 192.168.1.100
+### Traffic Monitoring by Host/Network
 
-# Capture traffic to specific destination
-tcpdump dst host 192.168.1.100
+| Purpose | Command |
+|---------|---------|
+| Capture traffic from/to specific host | tcpdump host 192.168.1.100 |
+| Capture traffic from specific source | tcpdump src host 192.168.1.100 |
+| Capture traffic to specific destination | tcpdump dst host 192.168.1.100 |
+| Capture traffic on subnet | tcpdump net 192.168.1.0/24 |
 
-# Capture traffic involving specific port
-tcpdump port 80
+### Protocol-Specific Monitoring
 
-# Capture HTTP traffic
-tcpdump port http or port 80
+| Purpose | Command |
+|---------|---------|
+| Capture HTTP traffic | tcpdump port http or port 80 |
+| Capture HTTPS traffic | tcpdump port https or port 443 |
+| Capture DNS traffic | tcpdump port domain or port 53 |
+| Capture SSH traffic | tcpdump port ssh or port 22 |
+| Capture SMTP traffic | tcpdump port smtp or port 25 |
+| Capture all web traffic | tcpdump port 80 or port 443 |
 
-# Capture HTTPS traffic
-tcpdump port https or port 443
+### Advanced Filtering Techniques
 
-# Capture DNS traffic
-tcpdump port domain or port 53
+| Purpose | Command |
+|---------|---------|
+| Traffic between two hosts on specific port | tcpdump tcp and host 192.168.1.100 and host 192.168.1.200 and port 80 |
+| All traffic except SSH | tcpdump not port 22 |
+| Traffic by packet size | tcpdump less 64 or tcpdump greater 500 |
+| Capture only TCP SYN packets | tcpdump 'tcp[tcpflags] & tcp-syn != 0' |
+| Capture SYN-ACK packets | tcpdump 'tcp[tcpflags] & (tcp-syn\|tcp-ack) == (tcp-syn\|tcp-ack)' |
 
-# Capture SSH traffic
-tcpdump port ssh or port 22
-```
+### Output Control & Analysis
 
-### Advanced filtering
-```bash
-# Capture TCP traffic between two hosts on specific port
-tcpdump tcp and host 192.168.1.100 and host 192.168.1.200 and port 80
+| Purpose | Command |
+|---------|---------|
+| Save captured packets to file | tcpdump -w capture.pcap |
+| Read packets from file | tcpdump -r capture.pcap |
+| Display packet data in hex and ASCII | tcpdump -X |
+| Display packet data with link layer header | tcpdump -XX |
+| Display ASCII text in packets | tcpdump -A port 80 |
+| Verbose output with timestamps | tcpdump -vv -tttt |
 
-# Capture all traffic except SSH
-tcpdump not port 22
+### HTTP Request Filtering
 
-# Capture packets with specific TCP flags (SYN)
-tcpdump 'tcp[tcpflags] & tcp-syn != 0'
+| Purpose | Command |
+|---------|---------|
+| Filter HTTP GET requests | tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)' |
+| Filter HTTP POST requests | tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0) and (tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x504f5354)' |
 
-# Capture packets with specific TCP flags (SYN-ACK)
-tcpdump 'tcp[tcpflags] & (tcp-syn|tcp-ack) == (tcp-syn|tcp-ack)'
+### Security Monitoring Examples
 
-# Capture TCP packets with PSH and ACK flags set
-tcpdump 'tcp[tcpflags] & (tcp-push|tcp-ack) == (tcp-push|tcp-ack)'
+| Purpose | Command |
+|---------|---------|
+| Detect port scanning | tcpdump -nn 'tcp[tcpflags] == tcp-syn' |
+| Monitor failed connection attempts | tcpdump 'tcp[tcpflags] & (tcp-syn\|tcp-rst) == tcp-rst' |
+| Detect potential DoS attack | tcpdump -nn 'tcp[tcpflags] == tcp-syn' | wc -l |
+| Detect ICMP flood | tcpdump -n icmp and icmp[icmptype]==icmp-echo |
+| Monitor DNS queries | tcpdump -i eth0 udp port 53 and not src host 192.168.1.1 |
 
-# Capture traffic by packet size
-tcpdump less 64
-tcpdump greater 500
-```
+### Performance Optimization
 
-### Output control & saving
-```bash
-# Save captured packets to file
-tcpdump -w capture.pcap
+| Purpose | Command |
+|---------|---------|
+| Limit captured data per packet | tcpdump -s 96 port 80 |
+| Fast capture with minimal processing | tcpdump -nn -q -s 0 -i eth0 |
+| Write to file without processing | tcpdump -nn -q -s 0 -i eth0 -w capture.pcap |
+| Split captures into multiple files | tcpdump -w capture_%Y-%m-%d_%H:%M:%S.pcap -G 3600 |
+| Rotate capture files | tcpdump -w capture.pcap -C 1 -W 10 |
 
-# Read packets from file
-tcpdump -r capture.pcap
-
-# Display packet data in hex and ASCII
-tcpdump -X
-
-# Display packet data including link layer header
-tcpdump -XX
-
-# Display ASCII text in packets (useful for HTTP)
-tcpdump -A port 80
-```
-
-### Practical targeting examples
-```bash
-# Capture only TCP SYN packets
-tcpdump -i eth0 'tcp[tcpflags] & tcp-syn != 0'
-
-# Filter HTTP GET requests
-tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
-
-# Filter HTTP POST requests
-tcpdump -i eth0 -s 0 -A 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0) and (tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x504f5354)'
-```
+Engage through this interface: https://linktr.ee/january1073
