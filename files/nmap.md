@@ -13,18 +13,13 @@
 | nmap -iL targets.txt | Input file |
 | nmap 192.168.1.0/24 --exclude 192.168.1.1 | Exclude targets |
 
-## Timing Templates
+## DNS Control
 
-| Flag | Name | Description |
-|------|------|-------------|
-| -T0 | Paranoid | Very slow, avoid IDS |
-| -T1 | Sneaky | Slow, avoid IDS |
-| -T2 | Polite | Slow, less bandwidth |
-| -T3 | Normal | Default timing |
-| -T4 | Aggressive | Fast, reliable networks |
-| -T5 | Insane | Very fast, may miss results |
-
-**Example:** nmap -T4 192.168.1.0/24
+| Command | Description |
+|---------|-------------|
+| nmap -n &lt;target&gt; | Skip DNS resolution |
+| nmap -R &lt;target&gt; | Force DNS resolution |
+| nmap --dns-servers 8.8.8.8,1.1.1.1 &lt;target&gt; | Use custom DNS servers |
 
 ## Host Discovery
 
@@ -41,25 +36,32 @@
 | nmap -Pn &lt;target&gt; | Skip ping (assume host is up) |
 
 ### Corporate Network Discovery
-TCP SYN ping to common ports
+```bash
+# TCP SYN ping to common ports
 nmap -PS22,80,443 192.168.1.0/24
 
-TCP ACK ping (useful against stateful firewalls)
+# TCP ACK ping (useful against stateful firewalls)
 nmap -PA80 192.168.1.0/24
 
-UDP ping to common services
+# UDP ping to common services
 nmap -PU53,161 192.168.1.0/24
+```
 
 ### Local Network Comprehensive Discovery
+```bash
 nmap -PE -PP -PM -PS21,22,23,25,53,80,110,111,135,139,143,443,993,995 -PA80,113,443,10042 -PU40125 192.168.1.0/24
+```
 
-## DNS Control
+## Port Specification
 
 | Command | Description |
 |---------|-------------|
-| nmap -n &lt;target&gt; | Skip DNS resolution |
-| nmap -R &lt;target&gt; | Force DNS resolution |
-| nmap --dns-servers 8.8.8.8,1.1.1.1 &lt;target&gt; | Use custom DNS servers |
+| nmap -p 22,80,443 &lt;target&gt; | Specific ports |
+| nmap -p 1-1000 &lt;target&gt; | Port range |
+| nmap &lt;target&gt; | Top 1000 most common ports (default) |
+| nmap --top-ports 100 &lt;target&gt; | Top n ports |
+| nmap -p- &lt;target&gt; | All 65535 ports |
+| nmap -p 1-1000 --exclude-ports 135,139 &lt;target&gt; | Exclude specific ports |
 
 ## Port Scanning Types
 
@@ -73,16 +75,18 @@ nmap -PE -PP -PM -PS21,22,23,25,53,80,110,111,135,139,143,443,993,995 -PA80,113,
 | FIN | nmap -sF &lt;target&gt; | FIN flag only | Root/Admin |
 | Xmas | nmap -sX &lt;target&gt; | FIN, PSH, URG flags | Root/Admin |
 
-## Port Specification
+## Timing Templates
 
-| Command | Description |
-|---------|-------------|
-| nmap -p 22,80,443 &lt;target&gt; | Specific ports |
-| nmap -p 1-1000 &lt;target&gt; | Port range |
-| nmap &lt;target&gt; | Top 1000 most common ports (default) |
-| nmap --top-ports 100 &lt;target&gt; | Top n ports |
-| nmap -p- &lt;target&gt; | All 65535 ports |
-| nmap -p 1-1000 --exclude-ports 135,139 &lt;target&gt; | Exclude specific ports |
+| Flag | Name | Description |
+|------|------|-------------|
+| -T0 | Paranoid | Very slow, avoid IDS |
+| -T1 | Sneaky | Slow, avoid IDS |
+| -T2 | Polite | Slow, less bandwidth |
+| -T3 | Normal | Default timing |
+| -T4 | Aggressive | Fast, reliable networks |
+| -T5 | Insane | Very fast, may miss results |
+
+**Example:** nmap -T4 192.168.1.0/24
 
 ## Service and OS Detection
 
@@ -157,6 +161,42 @@ nmap -PE -PP -PM -PS21,22,23,25,53,80,110,111,135,139,143,443,993,995 -PA80,113,
 | nmap --script=brute --script-args threads=5 &lt;target&gt; | Limit script threads |
 | nmap --script=http-enum --script-trace &lt;target&gt; | Debug script execution |
 
+## Output Formats
+
+| Command | Description |
+|---------|-------------|
+| nmap &lt;target&gt; | Normal output (default) |
+| nmap -v &lt;target&gt; | Verbose output |
+| nmap -oN scan_results.txt &lt;target&gt; | Save normal output to file |
+| nmap -oX scan_results.xml &lt;target&gt; | XML output for parsing |
+| nmap -oG scan_results.gnmap &lt;target&gt; | Grepable output |
+| nmap -oA scan_results &lt;target&gt; | All formats simultaneously |
+
+## Optimization Strategies
+
+### Fast Scanning (Large Networks)
+
+| Command | Description |
+|---------|-------------|
+| nmap -T4 --top-ports 100 192.168.1.0/24 | Fast scan of top 100 ports |
+| nmap -Pn -p 22,80,443 -T4 192.168.1.0/24 | Skip discovery, scan specific ports |
+
+### Comprehensive Scanning (Specific Targets)
+
+| Command | Description |
+|---------|-------------|
+| nmap -p- -T4 &lt;target&gt; | All TCP ports |
+| nmap -sSU -T4 &lt;target&gt; | Combined TCP and UDP scan |
+| nmap -p- -sV -T4 &lt;target&gt; | All ports with service detection |
+
+### UDP Optimization
+
+| Command | Description |
+|---------|-------------|
+| nmap -sU --top-ports 100 &lt;target&gt; | Scan common UDP ports only |
+| nmap -sU -sV &lt;target&gt; | UDP scan with version detection |
+| nmap -sU -T4 &lt;target&gt; | Faster UDP scanning |
+
 ## Advanced Scanning Techniques
 
 ### Idle (Zombie) Scan
@@ -184,69 +224,42 @@ nmap -PE -PP -PM -PS21,22,23,25,53,80,110,111,135,139,143,443,993,995 -PA80,113,
 | nmap --source-port 53 &lt;target&gt; | Use specific source port |
 | nmap -g 20 &lt;target&gt; | Use source port 20 (FTP-DATA) |
 
-## Optimization Strategies
-
-### Fast Scanning (Large Networks)
-
-| Command | Description |
-|---------|-------------|
-| nmap -T4 --top-ports 100 192.168.1.0/24 | Fast scan of top 100 ports |
-| nmap -Pn -p 22,80,443 -T4 192.168.1.0/24 | Skip discovery, scan specific ports |
-
-### Comprehensive Scanning (Specific Targets)
-
-| Command | Description |
-|---------|-------------|
-| nmap -p- -T4 &lt;target&gt; | All TCP ports |
-| nmap -sSU -T4 &lt;target&gt; | Combined TCP and UDP scan |
-| nmap -p- -sV -T4 &lt;target&gt; | All ports with service detection |
-
-### UDP Optimization
-
-| Command | Description |
-|---------|-------------|
-| nmap -sU --top-ports 100 &lt;target&gt; | Scan common UDP ports only |
-| nmap -sU -sV &lt;target&gt; | UDP scan with version detection |
-| nmap -sU -T4 &lt;target&gt; | Faster UDP scanning |
-
-## Output Formats
-
-| Command | Description |
-|---------|-------------|
-| nmap &lt;target&gt; | Normal output (default) |
-| nmap -v &lt;target&gt; | Verbose output |
-| nmap -oN scan_results.txt &lt;target&gt; | Save normal output to file |
-| nmap -oX scan_results.xml &lt;target&gt; | XML output for parsing |
-| nmap -oG scan_results.gnmap &lt;target&gt; | Grepable output |
-| nmap -oA scan_results &lt;target&gt; | All formats simultaneously |
-
 ## Common Command Combinations
 
 ### Basic Network Survey
-Discover live hosts
+```bash
+# Discover live hosts
 nmap -sn 192.168.1.0/24
 
-Fast port scan
+# Fast port scan
 nmap -sS -T4 --top-ports 1000 192.168.1.0/24
+```
 
 ### Comprehensive Target Analysis
-Aggressive scan
-nmap -A -T4 &lt;target&gt;
+```bash
+# Aggressive scan
+nmap -A -T4 <target>
 
-Custom aggressive combination
-nmap -sS -sV -O -sC -T4 &lt;target&gt;
+# Custom aggressive combination
+nmap -sS -sV -O -sC -T4 <target>
+```
 
 ### Stealth Reconnaissance
-Stealth scan with fragmentation and decoys
-nmap -sS -T2 -f -D RND:10 &lt;target&gt;
+```bash
+# Stealth scan with fragmentation and decoys
+nmap -sS -T2 -f -D RND:10 <target>
+```
 
-### Web Application Assessment
-nmap -p 80,443 -sV --script=http-* &lt;target&gt;
+### Service-Specific Assessments
+```bash
+# Web application assessment
+nmap -p 80,443 -sV --script=http-* <target>
 
-### Database Security Testing
-nmap -p 3306 --script=mysql-* &lt;target&gt;
+# Database security testing
+nmap -p 3306 --script=mysql-* <target>
 
-### SMB/NetBIOS Enumeration
-nmap -p 139,445 --script=smb-* &lt;target&gt;
+# SMB/NetBIOS enumeration
+nmap -p 139,445 --script=smb-* <target>
+```
 
 Reach out: https://linktr.ee/january1073
