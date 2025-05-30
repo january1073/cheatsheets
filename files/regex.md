@@ -79,8 +79,8 @@
 | `x`  | Verbose mode (allows comments and spacing) |
 | `g`  | Global search (varies by language/tool)    |
 
-In Python: `re.compile(r"pattern", re.IGNORECASE | re.MULTILINE)`
-In JavaScript: `/pattern/gim`
+* In Python: `re.compile(r"pattern", re.IGNORECASE | re.MULTILINE)`
+* In JavaScript: `/pattern/gim`
 
 ## Common Use Cases
 
