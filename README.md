@@ -11,4 +11,8 @@ Last update: 2025-05-25
 | [Wireshark](https://github.com/january1073/cheatsheets/blob/main/files/wireshark.md) | GUI-based packet analyzer; useful for in-depth network protocol analysis, real-time traffic capture, and troubleshooting complex network issues | ![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white) |
 | [Wireshark Display Filters (Examples)](https://github.com/january1073/cheatsheets/blob/main/files/wireshark_dfilters.md) | Examples of security-related display filters for Wireshark | ![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white) |
 
+## Productivity
+* Linux Terminal Shortcuts
+* Regex
+
 Reach out: https://linktr.ee/january1073
