@@ -1,4 +1,4 @@
-# XAMPP Cheat Sheet
+# XAMPP Cheatsheet
 
 ## Basic Commands
 | Command | Description | Example |
