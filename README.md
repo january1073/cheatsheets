@@ -16,5 +16,6 @@ Last update: 2025-05-31
 * [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux.md)
 * [Regex](https://github.com/january1073/cheatsheets/blob/main/files/regex.md)
 * [VirtualBox](https://github.com/january1073/cheatsheets/blob/main/files/virtualbox.md)
+* [XAMPP](https://github.com/january1073/cheatsheets/blob/main/files/xampp.md)
 
 Reach out: https://linktr.ee/january1073
