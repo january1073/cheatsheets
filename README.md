@@ -13,7 +13,7 @@ Last update: 2025-05-31
 | [Wireshark Display Filters (Examples)](https://github.com/january1073/cheatsheets/blob/main/files/wireshark_dfilters.md) | Examples of security-related display filters for Wireshark | ![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white) |
 
 ## Productivity
-* [Linux System Reconnaissance](https://github.com/january1073/cheatsheets/blob/main/files/linux_recon.md)
+* [Linux System Recon](https://github.com/january1073/cheatsheets/blob/main/files/linux_recon.md)
 * [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux_terminal.md)
 * [Regex](https://github.com/january1073/cheatsheets/blob/main/files/regex.md)
 * [VirtualBox](https://github.com/january1073/cheatsheets/blob/main/files/virtualbox.md)
