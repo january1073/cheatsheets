@@ -99,6 +99,5 @@ If I have only little time or no other idea where to begin, I often start with:
 - Combine commands with pipes (`|`) for powerful workflows
 - Check `/tmp` and `/dev/shm` for temporary files
 - Look for hidden files and directories (names starting with `.`)
-```
 
 Reach out: https://linktr.ee/january1073
