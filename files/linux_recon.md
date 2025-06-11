@@ -1,6 +1,6 @@
 # Linux System Reconnaissance Cheatsheet
 
-## Three Golden Commands
+## Three "Golden Commands"
 When I have only little time or no other idea where to begin, I often start with:
 * `uname -a`
 * `whoami && id`
