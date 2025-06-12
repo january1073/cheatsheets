@@ -26,7 +26,7 @@
 
 ### Installation
 * Install [Nerd Font](https://www.nerdfonts.com/)
-* `sudo apt install eza -y`
+* `sudo apt install eza`
 * `nano .bashrc` → "Terminal Configuration", below`
 
 ### Commands
