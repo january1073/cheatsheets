@@ -29,6 +29,8 @@
 * `sudo apt install eza -y`
 * `nano .bashrc` → "Terminal Configuration", below`
 
+* [Hacker Theme](https://github.com/january1073/eza_hacker_theme/blob/main/README.md)
+
 ### Commands
 
 | Command | Comment |
