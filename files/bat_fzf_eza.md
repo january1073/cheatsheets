@@ -43,14 +43,7 @@
 
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
-# bat
-alias cat='batcat'
-
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
-
-# eza (including color flags)
+# eza aliases (including color flags)
 alias ls='eza --group-directories-first --color=always'
 alias l='eza --git-ignore --group-directories-first --color=always'
 alias ll='eza -al --header --group --icons --group-directories-first --color=always'
@@ -59,6 +52,14 @@ alias la='eza -alh --group --icons --group-directories-first --color=always'
 alias lx='eza -alh@ --group --icons --group-directories-first --color=always'
 alias tree='eza --tree --group --icons --group-directories-first --color=always'
 alias lt='eza --tree --level=2 --group --icons --group-directories-first --color=always'
+
+# bat alias
+alias cat='batcat'
+
+# fzf integration
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
+
 ```
 
 Reach out: https://linktr.ee/january1073
