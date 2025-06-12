@@ -9,6 +9,8 @@
 
 ### Run: `cat <file>`
 
+### Resouces: [Bat](https://github.com/sharkdp/bat)
+
 ## FZF
 
 ### Installation
@@ -18,6 +20,8 @@
 * `source ~/.bashrc`
 
 ### Run: `ff`
+
+### Resources: [FZF](https://github.com/junegunn/fzf)
 
 ## EZA
 
