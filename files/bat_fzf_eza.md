@@ -38,8 +38,8 @@
 | `llm` | Like ll, but sorted by last modified time |
 | `la` | Long listing of all files, human-readable sizes, no header |
 | `lx` | Like la, but also show extended attributes (ACLs, xattrs) |
-| `lt` | Tree view with icons and group info |
-| `tree` | Same as lt; replaces the traditional tree command |
+| `lt` | Tree view with icons and group info, limited tree depth to 2 levels |
+| `tree` | Replaces the traditional tree command |
 
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
@@ -57,7 +57,7 @@ alias ll='eza -al --header --group --icons --group-directories-first $eza_params
 alias llm='eza -al --header --group --icons --sort=modified --group-directories-first $eza_params'
 alias la='eza -alh --group --icons --group-directories-first $eza_params'
 alias lx='eza -alh@ --group --icons --group-directories-first $eza_params'
-alias lt='eza --tree --group --icons --group-directories-first $eza_params'
+alias lt='eza --tree --level=2 --group --icons --group-directories-first $eza_params'
 alias tree='eza --tree --group --icons --group-directories-first $eza_params'
 ```
 
