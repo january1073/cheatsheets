@@ -29,8 +29,6 @@
 * `sudo apt install eza -y`
 * `nano .bashrc` → "Terminal Configuration", below`
 
-* [Hacker Theme](https://github.com/january1073/eza_hacker_theme/blob/main/README.md)
-
 ### Commands
 
 | Command | Comment |
@@ -43,6 +41,11 @@
 | `lx` | la plus extended attributes (ACLs, xattrs) |
 | `tree` | `tree` with icons and group info |
 | `lt` | ´tree´, limited tree depth to 2 levels |
+
+### Themes
+
+* [Hacker theme](https://github.com/january1073/eza_hacker_theme/blob/main/README.md)
+* [Official themes repo](https://github.com/eza-community/eza-themes)
 
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
