@@ -1,4 +1,4 @@
-# FZF & EZA Cheatsheet
+# Bat, FZF & EZA Cheatsheet
 
 ## Bat
 
