@@ -1,6 +1,7 @@
 # bat, fzf, & eza Cheatsheet
 
 ## bat
+* [Resources](https://github.com/sharkdp/bat)
 
 ### Installation
 * `sudo apt install bat`
@@ -9,9 +10,8 @@
 
 ### Run: `cat <file>`
 
-* [Resources](https://github.com/sharkdp/bat)
-
 ## fzf
+* [Resources](https://github.com/junegunn/fzf)
 
 ### Installation
 * `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
@@ -21,9 +21,8 @@
 
 ### Run: `ff`
 
-* [Resources](https://github.com/junegunn/fzf)
-
 ## eza
+* [Resources](https://github.com/eza-community/eza)
 
 ### Installation
 * Install [Nerd Font](https://www.nerdfonts.com/)
@@ -42,8 +41,6 @@
 | `lx` | la plus extended attributes (ACLs, xattrs) |
 | `tree` | `tree` with icons and group info |
 | `lt` | ´tree´, limited tree depth to 2 levels |
-
-[Resources](https://github.com/eza-community/eza)
 
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
