@@ -1,5 +1,14 @@
 # FZF & EZA Cheatsheet
 
+## Bat
+
+### Installation
+* `sudo apt install bat`
+* `nano .bashrc` → "Terminal Configuration", below
+* `source ~/.bashrc`
+
+### Run: `cat <file>`
+
 ## FZF
 
 ### Installation
@@ -30,6 +39,9 @@
 
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
+# Bat
+alias cat='batcat'
+
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
