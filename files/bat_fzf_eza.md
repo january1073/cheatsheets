@@ -9,7 +9,7 @@
 
 ### Run: `cat <file>`
 
-### Resouces: [bat](https://github.com/sharkdp/bat)
+* [Resources](https://github.com/sharkdp/bat)
 
 ## fzf
 
@@ -21,7 +21,7 @@
 
 ### Run: `ff`
 
-### Resources: [fzf](https://github.com/junegunn/fzf)
+* [Resources](https://github.com/junegunn/fzf)
 
 ## eza
 
@@ -29,6 +29,8 @@
 * Install [Nerd Font](https://www.nerdfonts.com/)
 * `sudo apt install eza -y`
 * `nano .bashrc` → "Terminal Configuration", below`
+
+### Commands
 
 | Command | Comment |
 |---------|---------|
@@ -40,6 +42,8 @@
 | `lx` | la plus extended attributes (ACLs, xattrs) |
 | `tree` | `tree` with icons and group info |
 | `lt` | ´tree´, limited tree depth to 2 levels |
+
+[Resources](https://github.com/eza-community/eza)
 
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
