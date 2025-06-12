@@ -1,6 +1,6 @@
-# Bat, FZF & EZA Cheatsheet
+# bat, fzf & eza Cheatsheet
 
-## Bat
+## bat
 
 ### Installation
 * `sudo apt install bat`
@@ -9,9 +9,9 @@
 
 ### Run: `cat <file>`
 
-### Resouces: [Bat](https://github.com/sharkdp/bat)
+### Resouces: [bat](https://github.com/sharkdp/bat)
 
-## FZF
+## fzf
 
 ### Installation
 * `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
@@ -21,9 +21,9 @@
 
 ### Run: `ff`
 
-### Resources: [FZF](https://github.com/junegunn/fzf)
+### Resources: [fzf](https://github.com/junegunn/fzf)
 
-## EZA
+## eza
 
 ### Installation
 * Install [Nerd Font](https://www.nerdfonts.com/)
@@ -32,33 +32,33 @@
 
 | Command | Comment |
 |---------|---------|
-| `ls` | Basic file listing (like plain ls) |
-| `l` | Hide .gitignored files (useful inside Git repos) |
+| `ls` | `ls` |
+| `l` | `ls`, hiding .gitignored files (useful inside Git repos) |
 | `ll` | Long listing of all files including hidden ones, with headers |
-| `llm` | Like ll, but sorted by last modified time |
-| `la` | Long listing of all files, human-readable sizes, no header |
-| `lx` | Like la, but also show extended attributes (ACLs, xattrs) |
-| `lt` | Tree view with icons and group info, limited tree depth to 2 levels |
-| `tree` | Replaces the traditional tree command |
+| `llm` | ll, sorted by modification time |
+| `la` | ll, human-readable sizes, no header |
+| `lx` | la plus extended attributes (ACLs, xattrs) |
+| `tree` | `tree` with icons and group info |
+| `lt` | ´tree´, limited tree depth to 2 levels |
 
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
-# Bat
+# bat
 alias cat='batcat'
 
-# FZF
+# fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 
-# EZA
-alias ls='eza --group-directories-first $eza_params'
-alias l='eza --git-ignore --group-directories-first $eza_params'
-alias ll='eza -al --header --group --icons --group-directories-first $eza_params'
-alias llm='eza -al --header --group --icons --sort=modified --group-directories-first $eza_params'
-alias la='eza -alh --group --icons --group-directories-first $eza_params'
-alias lx='eza -alh@ --group --icons --group-directories-first $eza_params'
-alias lt='eza --tree --level=2 --group --icons --group-directories-first $eza_params'
-alias tree='eza --tree --group --icons --group-directories-first $eza_params'
+# eza (including color flags)
+alias ls='eza --group-directories-first --color=always'
+alias l='eza --git-ignore --group-directories-first --color=always'
+alias ll='eza -al --header --group --icons --group-directories-first --color=always'
+alias llm='eza -al --header --group --icons --sort=modified --group-directories-first --color=always'
+alias la='eza -alh --group --icons --group-directories-first --color=always'
+alias lx='eza -alh@ --group --icons --group-directories-first --color=always'
+alias tree='eza --tree --group --icons --group-directories-first --color=always'
+alias lt='eza --tree --level=2 --group --icons --group-directories-first --color=always'
 ```
 
 Reach out: https://linktr.ee/january1073
