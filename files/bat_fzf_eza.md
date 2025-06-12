@@ -1,4 +1,4 @@
-# bat, fzf & eza Cheatsheet
+# bat, fzf, & eza Cheatsheet
 
 ## bat
 
@@ -48,14 +48,14 @@
 ## Terminal Configuration (`~/.bashrc`)
 ```bash
 # eza aliases (including color flags)
-alias ls='eza --group-directories-first --color=always'
-alias l='eza --git-ignore --group-directories-first --color=always'
-alias ll='eza -al --header --group --icons --group-directories-first --color=always'
-alias llm='eza -al --header --group --icons --sort=modified --group-directories-first --color=always'
-alias la='eza -alh --group --icons --group-directories-first --color=always'
-alias lx='eza -alh@ --group --icons --group-directories-first --color=always'
-alias tree='eza --tree --group --icons --group-directories-first --color=always'
-alias lt='eza --tree --level=2 --group --icons --group-directories-first --color=always'
+alias ls='eza --group-directories-first --icons'
+alias l='eza --group-directories-first --git-ignore --icons'
+alias ll='eza --group-directories-first -al --header --group --icons'
+alias llm='eza --group-directories-first -al --header --group --icons --sort=modified'
+alias la='eza --group-directories-first -alh --group --icons'
+alias lx='eza --group-directories-first -alh@ --group --icons'
+alias lt='eza --group-directories-first --tree --level=2 --group --icons'
+alias tree='eza --group-directories-first --tree --group --icons'
 
 # bat alias
 alias cat='batcat'
