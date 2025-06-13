@@ -55,12 +55,12 @@
 | `rm ~/.bash_history 2>/dev/null` | Remove history file |
 | `unalias ls 2>/dev/null` | Remove command aliases |
 
-## Rsync
+## rsync
 
 ### Service Discovery
-* Basic Rsync service test and module listing: `rsync <target_ip>::`
+* Basic rsync service test and module listing: `rsync <target_ip>::`
 * Explicit module listing: `rsync --list-only <target_ip>`
-* Scan common Rsync ports: `nmap -p 873,8873,9873 <target_ip>`
+* Scan common rsync ports: `nmap -p 873,8873,9873 <target_ip>`
 * Service detection: `nmap -sV -p 873 <target_ip>`
 
 ### Module Enumeration
@@ -103,7 +103,7 @@ rsync -avz --include="*passwd*" --include="*shadow*" --include="*config*" \
 |----------|-------------------|
 | FTP | Use realistic email addresses for anonymous login |
 | Telnet | Clear command history before disconnect |
-| Rsync | Use bandwidth limiting to appear as legitimate sync |
+| rsync | Use bandwidth limiting to appear as legitimate sync |
 
 ## Common Service Implementations
 
