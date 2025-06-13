@@ -10,7 +10,7 @@
 
 ### Anonymous Access
 * Username: `anonymous`
-* Password: `anonymous@example.com` / (blank)
+* Password (if needed): `anonymous@example.com` (or any other existing or non-existing email address)
 
 ### FTP Bounce Scanning
 * Use FTP server as proxy for port scanning: `nmap -b anonymous:anonymous@<ftp_server> <internal_target>`
