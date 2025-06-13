@@ -97,6 +97,8 @@ rsync -avz --include="*passwd*" --include="*shadow*" --include="*config*" \
 ## Detection Evasion & Operational Security
 
 ### Traffic Obfuscation
+
+#### Timing & Bandwidth Controls
 * Bandwidth limiting: `rsync -avz --bwlimit=50 --delay-updates <target>::<module>/ ./stealth_dump`
 * Randomized connection intervals
   ```bash
@@ -109,13 +111,54 @@ rsync -avz --include="*passwd*" --include="*shadow*" --include="*config*" \
   EOF
   done
   ```
+#### Connection Source obfuscation
+* Use VPN endpoints to vary source IP addresses
+* Proxy through compromised systems (if legally authorized)
+* Distribute reconnaissance across multiple source addresses
+* Time reconnaissance during high-traffic periods
 
 ### Log Evasion
 
-| Protocol | Evasion Technique |
-|----------|-------------------|
-| FTP | Use realistic email addresses for anonymous login |
-| Telnet | Clear command history before disconnect |
-| rsync | Use bandwidth limiting to appear as legitimate sync |
+#### FTP Log Evasion
+* Use realistic email addresses for anonymous FTP (instead of anonymous@test.com use john.smith@companyname.com)
+* Vary user agent strings if protocol supports them
+* Mimic legitimate backup software or file transfer tools
+
+#### General Log Evasion
+```
++------------+---------------------------------------+------------------------------------------------+
+| Protocol   | Common log entries                    | Minimization techniques                        |
++------------+---------------------------------------+------------------------------------------------+
+| FTP        | - "USER <username>"                   | - Use FTPS (FTP over SSL/TLS)                  |
+|            | - "PASS <password>"                   | - Use passive mode to avoid direct connections |
+|            | - "230 Login successful"              | - Obfuscate credentials (e.g., encoded)        |
+|            | - "550 Permission denied"             | - Limit connection frequency (throttle)        |
+|            | - "STOR <filename> (file upload)"     | - Use non-standard ports                       |
++------------+---------------------------------------+------------------------------------------------+
+| Telnet     | - "login: <username>"                 | - Replace with SSH (disables plaintext logs)   |
+|            | - "password: <password>"              | - Use VPN tunneling to hide traffic            |
+|            | - "Last login: <timestamp>"           | - Disable logging on target if possible        |
+|            | - "Connection closed by foreign host" | - Use IP spoofing (risky)                      |
++------------+---------------------------------------+------------------------------------------------+
+| rsync      | - "sent <X> bytes received <Y> bytes" | - Use SSH mode (`rsync -e ssh`)                |
+|            | - "delta-transmission disabled"       | - Throttle speed (`--bwlimit`)                 |
+|            | - "password file must not be other-"  | - Avoid `--password-file` (use SSH keys)       |
+|            |   "readable" (auth failure)           | - Run over Tor/VPN                             |
+|            | - "<file> sent/to-send"               | - Modify default port (`--port`)               |
++------------+---------------------------------------+------------------------------------------------+
+```
+
+#### Telnet Session Hygiene
+* Clear command history before disconnect:
+  ```bash
+  history -c
+  unset HISTFILE
+  rm ~/.bash_history 2>/dev/null
+  ```
+* Avoid leaving obvious traces:
+  ```bash
+  unalias ls 2>/dev/null
+  cd /
+  ```
 
 Reach out: https://linktr.ee/january1073
