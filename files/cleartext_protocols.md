@@ -105,17 +105,6 @@ rsync -avz --include="*passwd*" --include="*shadow*" --include="*config*" \
 | Telnet | Clear command history before disconnect |
 | Rsync | Use bandwidth limiting to appear as legitimate sync |
 
-### Common Log Entries to Avoid
-
-| Protocol | Suspicious Pattern | Mitigation |
-|----------|-------------------|------------|
-| FTP | Multiple failed login attempts | Use valid credentials or space out attempts |
-| FTP | Bulk file downloads | Limit bandwidth and randomize timing |
-| Telnet | Administrative commands from unknown IPs | Use VPN/proxy rotation |
-| Telnet | History of reconnaissance commands | Clear history before disconnect |
-| Rsync | Large data transfers | Use bandwidth limiting |
-| Rsync | Access to sensitive modules | Access during high-traffic periods |
-
 ## Common Service Implementations
 
 ### FTP Implementations
