@@ -1,7 +1,7 @@
 # Linux System Recon Cheatsheet
 
 ## Three "Golden Commands"
-When I have only little time or no other idea where to begin, I often start with:
+When I have only little time, or no other idea where to begin, I often start with:
 * `uname -a`
 * `whoami && id`
 * `ifconfig || ip a`
