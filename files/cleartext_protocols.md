@@ -105,25 +105,4 @@ rsync -avz --include="*passwd*" --include="*shadow*" --include="*config*" \
 | Telnet | Clear command history before disconnect |
 | rsync | Use bandwidth limiting to appear as legitimate sync |
 
-## Common Service Implementations
-
-### FTP Implementations
-
-| Implementation | Typical Banner |
-|----------------|----------------|
-| vsftpd | `220 (vsFTPd 3.0.3)` |
-| ProFTPD | `220 ProFTPD Server` |
-| Pure-FTPd | `220 Pure-FTPd Server` |
-| FileZilla Server | `220-FileZilla Server` |
-| Microsoft IIS | `220 Microsoft FTP Service` |
-
-### Telnet Implementations
-
-| Implementation | Typical Identifier |
-|----------------|-------------------|
-| Linux telnetd | `Debian GNU/Linux` or similar OS banner |
-| Windows Telnet Server | `Welcome to Microsoft Telnet Server` |
-| Cisco IOS | `User Access Verification` |
-| BusyBox | `Welcome to ... (built-in shell)` |
-
 Reach out: https://linktr.ee/january1073
