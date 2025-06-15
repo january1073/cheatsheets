@@ -1,7 +1,5 @@
 # Cheatsheets
 
-Last update: 2025-06-15
-
 | Tool | Description | Tactics |
 | :---------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Cleartext Protocols](https://github.com/january1073/cheatsheets/blob/main/files/cleartext_protocols.md) | FTP, Telnet, and rsync transmit data unencrypted, making credentials and files easily interceptable | ![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Command and Control](https://img.shields.io/badge/Command%20and%20Control-DC143C?style=flat-square&logoColor=white) ![Initial Access](https://img.shields.io/badge/Initial%20Access-DC143C?style=flat-square&logoColor=white) ![Lateral Movement](https://img.shields.io/badge/Lateral%20Movement-DC143C?style=flat-square&logoColor=white) ![Persistence](https://img.shields.io/badge/Persistence-DC143C?style=flat-square&logoColor=white) |
