@@ -19,6 +19,7 @@ Last update: 2025-06-13
 * [Linux System Recon](https://github.com/january1073/cheatsheets/blob/main/files/linux_recon.md)
 * [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux_terminal.md)
 * [Regex](https://github.com/january1073/cheatsheets/blob/main/files/regex.md)
+* [SSH & SCP](https://github.com/january1073/cheatsheets/blob/main/files/ssh_scp.md)
 * [VirtualBox](https://github.com/january1073/cheatsheets/blob/main/files/virtualbox.md)
 * [XAMPP](https://github.com/january1073/cheatsheets/blob/main/files/xampp.md)
 
