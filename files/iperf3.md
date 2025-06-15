@@ -9,3 +9,5 @@
 - `iperf3 -c <server_ip_addr> -p <port_number>`
 
 ## Resources: https://iperf.fr/
+
+Reach out: https://linktr.ee/january1073
