@@ -67,10 +67,65 @@
 | `*`   | Jump to next occurrence of word under cursor       |
 | `#`   | Jump to previous occurrence of word under cursor   |
 
+### Copy & Paste
+
+#### Yank (Copy)
+| Key     | Description                          |
+|---------|--------------------------------------|
+| `y␣`    | Yank char under the cursor           |
+| `yy`    | Yank the line under the cursor       |
+| `2yy`   | Yank the 2 lines under the cursor    |
+| `yw`    | Yank word                            |
+| `y$`    | Yank to end of line                  |
+
+#### Paste
+| Key   | Description              |
+|-------|--------------------------|
+| `p`   | Paste after the cursor   |
+| `P`   | Paste before the cursor  |
+
+#### Delete (Cut)
+| Key   | Description                        |
+|-------|------------------------------------|
+| `dd`  | Delete the line under the cursor   |
+| `dw`  | Delete the word                    |
+| `x`   | Delete current char                |
+| `X`   | Delete previous char               |
+| `xp`  | Transpose two letters              |
+| `D`   | Delete to end of line              |
+
+#### Change (Cut & Enter Insert Mode)
+| Key   | Description                          |
+|-------|--------------------------------------|
+| `s`   | Delete char under the cursor         |
+| `S`   | Delete line under the cursor         |
+
+## Customize (tbd.)
+
+`.vimrc`: configuration details
+
+## Advanced (tbd.)
+* Fold
+* Marks
+* Search
+* Regex Review
+* Substitute Text
+* Buffers
+* Macros
+* Run External Commands
+* Check Spelling
+
+## Extend Vim
+* [vim-go-ide](https://github.com/rgerardi/vim-go-ide)
+* [VimAwesome](https://vimawesome.com/)
+
 ## Help
 * `h`: basic help
 * `h <topic>`: help on a topic
 * `h help`: help on help (~25-30 min.)
-* `vimtutor`: interactive intro for the most common commands
 * [Official website](http://www.vim.org/)
-* [Other useful links](https://vimschool.netlify.app/links/)
+
+## Learn
+* `vimtutor`: interactive intro for the most common commands
+* [vim-tutor-sequel](https://github.com/micahkepe/vimtutor-sequel)
+* [VIM Adventures](https://vim-adventures.com/)
