@@ -19,6 +19,7 @@
 * [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux_terminal.md)
 * [Regex](https://github.com/january1073/cheatsheets/blob/main/files/regex.md)
 * [SSH & SCP](https://github.com/january1073/cheatsheets/blob/main/files/ssh_scp.md)
+* [Vim](https://github.com/january1073/cheatsheets/blob/main/files/vim.md)
 * [VirtualBox](https://github.com/january1073/cheatsheets/blob/main/files/virtualbox.md)
 * [XAMPP](https://github.com/january1073/cheatsheets/blob/main/files/xampp.md)
 
