@@ -1,12 +1,22 @@
 # Vim Cheatsheet
 
 ## Installation
-* `sudo apt install vim`
+* Debian-based: `sudo apt install vim`
+* Fedora-based: `sudo dnf install vim`
+* Arch-based: `sudo pacman -S vim`
 
 ## Vim modes (displayed at the bottom left)
-* `[Esc]` → **Normal mode** (copy, paste, cut, find/replce, etc.); `:` → **Command mode** (update configs, save, quit, open new files, tabs, buffers, etc.)
-* **Insert mode** (select text)
-* **Visual mode** (edit text)
+* `[Esc]` → **Normal Mode** (copy, paste, cut, find/replce, etc.); `:` → **Command Mode** (update configs, save, quit, open new files, tabs, buffers, etc.)
+* **Insert Mode** (select text)
+  | Key | Switch to Insert Mode and ... |
+  |-----|-------------|
+  | `i` | Edit text **right before** the current cursor position |
+  | `I` | Place the cursor at the **beginning of the line** |
+  | `a` | Edit text **right after** the current cursor position |
+  | `A` | Place the cursor at the **end of the line** |
+  | `o` | **Add a new line below** the current one |
+  | `O` | **Add a new line above** the current one |
+* **Visual Mode** (edit text)
 
 ## Help
 * `h`: basic help
