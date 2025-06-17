@@ -5,8 +5,11 @@
 * Fedora-based: `sudo dnf install vim`
 * Arch-based: `sudo pacman -S vim`
 
-## Vim modes (displayed at the bottom left)
+## Basics
+
+### Vim modes (displayed at the bottom left)
 * `[Esc]` → **Normal Mode** (copy, paste, cut, find/replce, etc.); `:` → **Command Mode** (update configs, save, quit, open new files, tabs, buffers, etc.)
+  
 * **Insert Mode** (select text)
   
   | Key | Switch to Insert Mode and ... |
@@ -25,6 +28,44 @@
   | `v` | start from the **character under the cursor** |
   | `V` | select **entire lines**, starting with the current line |
   | `[Ctrl]` + `[v]` | select **vertical blocks** |
+
+### Navigation
+| `h` | `j` | `k` | `l` |
+|---|---|---|---|
+| ← | ↓ | ↑ | → |
+
+#### Screen or File Navigation
+| Key   | Description                                  |
+|-------|----------------------------------------------|
+| `zt`  | Move the screen to the top of the window     |
+| `zz`  | Move the screen to the middle of the window  |
+| `zb`  | Move the screen to the bottom of the window  |
+| `H`   | Move the cursor to the highest line on screen|
+| `M`   | Move the cursor to the middle line on screen |
+| `L`   | Move the cursor to the lowest line on screen |
+| `gg`  | Move the cursor to the beginning of the file |
+| `G`   | Move the cursor to the end of the file       |
+| ``  | Return to the previous place                   |
+| `"`   | Return to previous line                      |
+
+#### Words or Content Navigation
+| Key   | Description                                        |
+|-------|----------------------------------------------------|
+| `^`   | Move to first non-blank character of the line      |
+| `0`   | Move to beginning of the line                      |
+| `$`   | Move to end of the line                            |
+| `w`   | Move to beginning of next word                     |
+| `e`   | Move to end of current word                        |
+| `b`   | Move to beginning of previous word                 |
+| `ge`  | Move to end of previous word                       |
+| `fc`  | Jump to next occurrence of character `c`           |
+| `Fc`  | Jump to previous occurrence of character `c`       |
+| `tc`  | Jump just before next occurrence of character `c`  |
+| `Tc`  | Jump just after previous occurrence of character `c`|
+| `;`   | Repeat last character search forward               |
+| `,`   | Repeat last character search backward              |
+| `*`   | Jump to next occurrence of word under cursor       |
+| `#`   | Jump to previous occurrence of word under cursor   |
 
 ## Help
 * `h`: basic help
