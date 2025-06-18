@@ -68,7 +68,13 @@
 | `*`   | Jump to next occurrence of word under cursor        |
 | `#`   | Jump to previous occurrence of word under cursor    |
 
-### Copy & Paste
+### Copy & Quit
+| Command | Description                                                      |
+|---------|------------------------------------------------------------------|
+| `:wq`   | Write (save) and quit                                            |
+| `:x`    | Write if changed, then quit                                      |
+| `ZZ`    | Write if changed, then quit; shortcut in Normal mode (`Shift+ZZ`)|
+| `:q!`   | Quit without saving                                              |
 
 #### Yank (Copy)
 | Key     | Description                          |
@@ -101,6 +107,14 @@
 | `s`   | Delete char under the cursor         |
 | `S`   | Delete line under the cursor         |
 
+## Save & Exit
+| Command | Description                     | When to Use                                |
+|---------|---------------------------------|--------------------------------------------|
+| `:wq`   | Write (save) and quit           | Save changes and exit Vim                  |
+| `:x`    | Write if changed, then quit     | Same as `:wq`, but only saves if modified  |
+| `ZZ`    | Write if changed, then quit     | Shortcut in Normal mode (`Shift+ZZ`)       |
+| `:q!`   | Quit without saving             | Exit and discard changes                   |
+
 ## Customize (tbd.)
 `.vimrc`: configuration details
 
@@ -128,3 +142,5 @@
 ## Learn
 * `vimtutor`: interactive intro for the most common commands
 * [vim-tutor-sequel](https://github.com/micahkepe/vimtutor-sequel)
+
+Reach out: https://linktr.ee/january1073
