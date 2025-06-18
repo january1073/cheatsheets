@@ -68,10 +68,10 @@
 | `*`   | Jump to next occurrence of word under cursor        |
 | `#`   | Jump to previous occurrence of word under cursor    |
 
-### Copy & Quit
+### Write (Save) & Quit
 | Command | Description                                                      |
 |---------|------------------------------------------------------------------|
-| `:wq`   | Write (save) and quit                                            |
+| `:wq`   | Write and quit                                            |
 | `:x`    | Write if changed, then quit                                      |
 | `ZZ`    | Write if changed, then quit; shortcut in Normal mode (`Shift+ZZ`)|
 | `:q!`   | Quit without saving                                              |
