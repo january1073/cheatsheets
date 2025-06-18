@@ -68,15 +68,7 @@
 | `*`   | Jump to next occurrence of word under cursor        |
 | `#`   | Jump to previous occurrence of word under cursor    |
 
-### Write (Save) & Quit
-| Command | Description                                                      |
-|---------|------------------------------------------------------------------|
-| `:wq`   | Write and quit                                            |
-| `:x`    | Write if changed, then quit                                      |
-| `ZZ`    | Write if changed, then quit; shortcut in Normal mode (`Shift+ZZ`)|
-| `:q!`   | Quit without saving                                              |
-
-#### Yank (Copy)
+### Yank (Copy)
 | Key     | Description                          |
 |---------|--------------------------------------|
 | `y␣`    | Yank char under the cursor           |
@@ -85,13 +77,13 @@
 | `yw`    | Yank word                            |
 | `y$`    | Yank to end of line                  |
 
-#### Paste
+### Paste
 | Key   | Description              |
 |-------|--------------------------|
 | `p`   | Paste after the cursor   |
 | `P`   | Paste before the cursor  |
 
-#### Delete (Cut)
+### Delete (Cut)
 | Key   | Description                        |
 |-------|------------------------------------|
 | `dd`  | Delete the line under the cursor   |
@@ -101,19 +93,19 @@
 | `xp`  | Transpose two letters              |
 | `D`   | Delete to end of line              |
 
-#### Change (Cut & Enter Insert Mode)
+### Change (Cut & Enter Insert Mode)
 | Key   | Description                          |
 |-------|--------------------------------------|
 | `s`   | Delete char under the cursor         |
 | `S`   | Delete line under the cursor         |
 
-## Save & Exit
-| Command | Description                     | When to Use                                |
-|---------|---------------------------------|--------------------------------------------|
-| `:wq`   | Write (save) and quit           | Save changes and exit Vim                  |
-| `:x`    | Write if changed, then quit     | Same as `:wq`, but only saves if modified  |
-| `ZZ`    | Write if changed, then quit     | Shortcut in Normal mode (`Shift+ZZ`)       |
-| `:q!`   | Quit without saving             | Exit and discard changes                   |
+### Write (Save) & Quit
+| Command | Description                                                      |
+|---------|------------------------------------------------------------------|
+| `:wq`   | Write and quit                                            |
+| `:x`    | Write if changed, then quit                                      |
+| `ZZ`    | Write if changed, then quit; shortcut in Normal mode (`Shift+ZZ`)|
+| `:q!`   | Quit without saving                                              |
 
 ## Customize (tbd.)
 `.vimrc`: configuration details
