@@ -49,23 +49,24 @@
 | `"`   | Return to previous line                      |
 
 #### Words or Content Navigation
-| Key   | Description                                        |
-|-------|----------------------------------------------------|
-| `w`   | Move to beginning of next word                     |
-| `e`   | Move to end of current word                        |
-| `b`   | Move to beginning of previous word                 |
-| `^`   | Move to first non-blank character of the line      |
-| `0`   | Move to beginning of the line                      |
-| `$`   | Move to end of the line                            |
-| `ge`  | Move to end of previous word                       |
-| `fc`  | Jump to next occurrence of character `c`           |
-| `Fc`  | Jump to previous occurrence of character `c`       |
-| `tc`  | Jump just before next occurrence of character `c`  |
+| Key   | Description                                         |
+|-------|-----------------------------------------------------|
+| `w`   | Move to beginning of next word                      |
+| `e`   | Move to end of current word                         |
+| `b`   | Move to beginning of previous word                  |
+| `B`   | [...]                                               |
+| `^`   | Move to first non-blank character of the line       |
+| `0`   | Move to beginning of the line                       |
+| `$`   | Move to end of the line                             |
+| `ge`  | Move to end of previous word                        |
+| `fc`  | Jump to next occurrence of character `c`            |
+| `Fc`  | Jump to previous occurrence of character `c`        |
+| `tc`  | Jump just before next occurrence of character `c`   |
 | `Tc`  | Jump just after previous occurrence of character `c`|
-| `;`   | Repeat last character search forward               |
-| `,`   | Repeat last character search backward              |
-| `*`   | Jump to next occurrence of word under cursor       |
-| `#`   | Jump to previous occurrence of word under cursor   |
+| `;`   | Repeat last character search forward                |
+| `,`   | Repeat last character search backward               |
+| `*`   | Jump to next occurrence of word under cursor        |
+| `#`   | Jump to previous occurrence of word under cursor    |
 
 ### Copy & Paste
 
@@ -127,4 +128,3 @@
 ## Learn
 * `vimtutor`: interactive intro for the most common commands
 * [vim-tutor-sequel](https://github.com/micahkepe/vimtutor-sequel)
-* [VIM Adventures](https://vim-adventures.com/)
