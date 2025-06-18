@@ -51,12 +51,12 @@
 #### Words or Content Navigation
 | Key   | Description                                        |
 |-------|----------------------------------------------------|
-| `^`   | Move to first non-blank character of the line      |
-| `0`   | Move to beginning of the line                      |
-| `$`   | Move to end of the line                            |
 | `w`   | Move to beginning of next word                     |
 | `e`   | Move to end of current word                        |
 | `b`   | Move to beginning of previous word                 |
+| `^`   | Move to first non-blank character of the line      |
+| `0`   | Move to beginning of the line                      |
+| `$`   | Move to end of the line                            |
 | `ge`  | Move to end of previous word                       |
 | `fc`  | Jump to next occurrence of character `c`           |
 | `Fc`  | Jump to previous occurrence of character `c`       |
