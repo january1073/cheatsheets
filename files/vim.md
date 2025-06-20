@@ -4,6 +4,7 @@
 * Debian-based: `sudo apt install vim`
 * Fedora-based: `sudo dnf install vim`
 * Arch-based: `sudo pacman -S vim`
+* macOS (usually pre-installed): `brew install vim`
 
 ## Basics
 
