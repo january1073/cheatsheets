@@ -87,8 +87,10 @@
 ### Delete (Cut)
 | Key   | Description                        |
 |-------|------------------------------------|
-| `dd`  | Delete the line under the cursor   |
-| `dw`  | Delete the word                    |
+| `dw`  | Delete from the cursor up to the next word |
+| `de`  | Delete from the cursor up to the end of the word |
+| `d$`  | Delete from the cursor to the end of a line |
+| `dd`  | Delete a whole line                |
 | `x`   | Delete current char                |
 | `X`   | Delete previous char               |
 | `xp`  | Transpose two letters              |
