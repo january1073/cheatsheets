@@ -99,4 +99,4 @@
 * Use tools like [regex101.com](https://regex101.com) or `grep -P`, `sed`, `awk`, or language-native regex engines.
 * Be careful with greedy quantifiers (`*`, `+`) when parsing nested or complex data.
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
