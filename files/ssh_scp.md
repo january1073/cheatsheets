@@ -105,4 +105,4 @@ mkdir -p ~/.ssh/sockets
 | Check SSH service status       | `sudo systemctl status sshd`                             |
 | View auth logs (Debian/Ubuntu) | `sudo journalctl -u ssh` or `sudo cat /var/log/auth.log` |
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
