@@ -125,4 +125,4 @@ VBoxManage modifyvm "Web_Server" --vrde on --vrdeport 3389
 VBoxManage startvm "Web_Server" --type headless
 ```
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
