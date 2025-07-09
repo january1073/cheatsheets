@@ -122,4 +122,4 @@
 | Regular expression | tshark -r capture.pcap -Y "http.host matches \"^[a-z0-9]{15,}\\.com$\"" |
 | Packet size filter | tshark -r capture.pcap -Y "frame.len > 1000" |
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
