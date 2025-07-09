@@ -68,4 +68,4 @@ alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform
 
 ```
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
