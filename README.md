@@ -17,6 +17,7 @@
 * [Git & GitHub](https://github.com/january1073/cheatsheets/blob/main/files/git_github.md)
 * [Linux System Recon](https://github.com/january1073/cheatsheets/blob/main/files/linux_recon.md)
 * [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux_terminal.md)
+* [Ollama](https://github.com/january1073/cheatsheets/blob/main/files/ollama.md)
 * [Regex](https://github.com/january1073/cheatsheets/blob/main/files/regex.md)
 * [SSH & SCP](https://github.com/january1073/cheatsheets/blob/main/files/ssh_scp.md)
 * [Vim](https://github.com/january1073/cheatsheets/blob/main/files/vim.md)
