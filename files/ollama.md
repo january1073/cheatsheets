@@ -130,3 +130,5 @@ curl http://localhost:11434/api/generate -d '{
 
 * Model Library: [https://ollama.com/library](https://ollama.com/library)
 * GitHub Repo: [https://github.com/ollama/ollama](https://github.com/ollama/ollama)
+
+Reach out: https://guns.lol/january1073
