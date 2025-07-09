@@ -182,4 +182,4 @@
 | Split captures into multiple files | tcpdump -w capture_%Y-%m-%d_%H:%M:%S.pcap -G 3600 |
 | Rotate capture files | tcpdump -w capture.pcap -C 1 -W 10 |
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
