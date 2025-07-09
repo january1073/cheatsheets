@@ -138,4 +138,4 @@
 * `vimtutor`: interactive intro for the most common commands
 * [vim-tutor-sequel](https://github.com/micahkepe/vimtutor-sequel)
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
