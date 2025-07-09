@@ -65,4 +65,4 @@
 
 > SysRq key is often labeled as "Print Screen"
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
