@@ -192,4 +192,4 @@ Verify with: `getcap /usr/bin/dumpcap` (should return `/usr/bin/dumpcap = cap_ne
 - Look for unusual patterns (high volumes, odd ports, unexpected protocols)
 - More display filter expressions here: [Wireshark Display Filters (Examples)]
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
