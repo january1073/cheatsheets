@@ -45,4 +45,4 @@
 - Use `-p` flag to be prompted for MySQL password
 - Replace `root` with your MySQL username if different
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
