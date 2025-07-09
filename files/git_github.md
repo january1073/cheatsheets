@@ -114,4 +114,4 @@
 | Remove untracked files/dirs         | `git clean -fd` |
 | Dry run (see what would be deleted) | `git clean -n`  |
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
