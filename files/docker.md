@@ -125,4 +125,4 @@ docker run -d -p 8080:80 --name web nginx
 | Stop services       | `docker-compose down`       |
 | Rebuild services    | `docker-compose up --build` |
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
