@@ -214,4 +214,4 @@
 | Display with timestamps | hping3 -S -p 80 -Z target.host |
 | Verbose IP information | hping3 -S -p 80 -V target.host |
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
