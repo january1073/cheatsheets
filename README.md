@@ -24,4 +24,4 @@
 * [VirtualBox](https://github.com/january1073/cheatsheets/blob/main/files/virtualbox.md)
 * [XAMPP](https://github.com/january1073/cheatsheets/blob/main/files/xampp.md)
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
