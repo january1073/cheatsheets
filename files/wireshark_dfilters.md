@@ -168,4 +168,4 @@
 | Curl user-agent | http.user_agent contains "curl" |
 | Security tool user-agents | http.user_agent matches "(sqlmap\|nikto\|nmap\|acunetix\|fuzz\|dirbuster)" |
 
-Reach out: https://linktr.ee/january1073
+Reach out: https://guns.lol/january1073
