@@ -1,4 +1,4 @@
-# Git & GitHub Cheatsheet
+# Git, GitHub & GitLab Cheatsheet
 
 ## Configuration (Run Once)
 
@@ -61,21 +61,21 @@
 | Continue rebase            | `git rebase --continue`                   |
 | Resolve conflicts manually | Edit files, then `git add`, then continue |
 
-## Remote Repositories (e.g., GitHub)
+## Remote Repositories (GitHub & GitLab)
 
-| Action                       | Command                           |
-| ---------------------------- | --------------------------------- |
-| Add remote                   | `git remote add origin <url>`     |
-| Check remotes                | `git remote -v`                   |
-| Push to remote (first time)  | `git push -u origin main`         |
-| Push to remote (after setup) | `git push`                        |
-| Pull changes                 | `git pull`                        |
-| Fetch remote updates         | `git fetch`                       |
-| View remote branches         | `git branch -r`                   |
-| Rename remote                | `git remote rename origin github` |
-| Remove remote                | `git remote remove origin`        |
+| Action                       | Command                               |
+| ---------------------------- | ------------------------------------- |
+| Add remote                   | `git remote add origin <url>`         |
+| Check remotes                | `git remote -v`                       |
+| Push to remote (first time)  | `git push -u origin main`             |
+| Push to remote (after setup) | `git push`                            |
+| Pull changes                 | `git pull`                            |
+| Fetch remote updates         | `git fetch`                           |
+| View remote branches         | `git branch -r`                       |
+| Rename remote                | `git remote rename origin github`     |
+| Remove remote                | `git remote remove origin`            |
 
-## GitHub SSH Setup (Optional)
+## GitHub SSH Setup
 
 | Action                       | Command / Location                           |
 | ---------------------------- | -------------------------------------------- |
@@ -84,6 +84,29 @@
 | Add to GitHub (UI)           | GitHub → Settings → SSH & GPG keys           |
 | Test connection              | `ssh -T git@github.com`                      |
 | Use SSH URL                  | `git@github.com:user/repo.git`               |
+
+## GitLab SSH Setup
+
+| Action                       | Command / Location                           |
+| ---------------------------- | -------------------------------------------- |
+| Generate SSH key             | `ssh-keygen -t ed25519 -C "you@example.com"` |
+| Copy public key to clipboard | `cat ~/.ssh/id_ed25519.pub`                  |
+| Add to GitLab (UI)           | GitLab → Preferences → SSH Keys              |
+| Test connection              | `ssh -T git@gitlab.com`                      |
+| Use SSH URL                  | `git@gitlab.com:user/repo.git`               |
+
+## GitLab-Specific Notes
+
+| Task                                         | Tip or Location                                                |
+| -------------------------------------------- | -------------------------------------------------------------- |
+| Create personal access token                 | GitLab → Preferences → Access Tokens                          |
+| Clone using HTTPS with token                 | `https://oauth2:<token>@gitlab.com/user/repo.git`             |
+| Set protected branches                       | Project → Repository → Branches → "Protected"                 |
+| Add collaborators / members                  | Project → Members                                              |
+| Create merge request                         | GitLab UI: Repository → Merge Requests → New                  |
+| Rename default branch                        | Project → Repository → Branches → Options                     |
+| Fork a repository                            | GitLab UI: Top-right corner → Fork                             |
+| Restore deleted project (if within grace)    | GitLab UI: Your projects → "Pending Deletion" → "Restore"     |
 
 ## Stashing Changes
 
