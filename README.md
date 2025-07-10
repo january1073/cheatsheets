@@ -14,7 +14,7 @@
 ## Productivity
 * [bat, fzf, & eza](https://github.com/january1073/cheatsheets/blob/main/files/bat_fzf_eza.md)
 * [Docker](https://github.com/january1073/cheatsheets/blob/main/files/docker.md)
-* [Git & GitHub](https://github.com/january1073/cheatsheets/blob/main/files/git_github.md)
+* [Git, GitHub & GitLab](https://github.com/january1073/cheatsheets/blob/main/files/git_github_gitlab.md)
 * [Linux System Recon](https://github.com/january1073/cheatsheets/blob/main/files/linux_recon.md)
 * [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux_terminal.md)
 * [Ollama](https://github.com/january1073/cheatsheets/blob/main/files/ollama.md)
