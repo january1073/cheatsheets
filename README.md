@@ -15,6 +15,7 @@
 * [bat, fzf, & eza](https://github.com/january1073/cheatsheets/blob/main/files/bat_fzf_eza.md)
 * [Docker](https://github.com/january1073/cheatsheets/blob/main/files/docker.md)
 * [Git, GitHub & GitLab](https://github.com/january1073/cheatsheets/blob/main/files/git_github_gitlab.md)
+* [IRC & Weechat](https://github.com/january1073/cheatsheets/blob/main/files/irc_weechat.md)
 * [Linux System Recon](https://github.com/january1073/cheatsheets/blob/main/files/linux_recon.md)
 * [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux_terminal.md)
 * [Ollama](https://github.com/january1073/cheatsheets/blob/main/files/ollama.md)
