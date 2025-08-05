@@ -1,11 +1,4 @@
-/set irc.server.libera.autojoin "#cybersecurity,#security,#linux,#python,#c,#ubuntu,#debian,#archlinux,#libera,#weechat"
-
-
 # IRC & Weechat Cheatsheet
-
-This cheatsheet covers basic to intermediate IRC and Weechat usage, ideal for new users focused on security channels.
-
----
 
 ## Setup Commands
 
@@ -25,8 +18,6 @@ This cheatsheet covers basic to intermediate IRC and Weechat usage, ideal for ne
 | `/leave` or `/part` | Leave the current channel |
 | `/me <action>` | Send an action message (`/me waves`) |
 
----
-
 ## Buffer Navigation
 
 | Key/Command | Description |
@@ -36,8 +27,6 @@ This cheatsheet covers basic to intermediate IRC and Weechat usage, ideal for ne
 | `/buffers` | List all open buffers |
 | `/buffer <number>` | Switch to buffer by number |
 | `/close` | Close the current buffer |
-
----
 
 ## Common IRC Commands
 
@@ -51,8 +40,6 @@ This cheatsheet covers basic to intermediate IRC and Weechat usage, ideal for ne
 | `/ban <nick>` | Ban a user (op only) |
 | `/msg <nick> <message>` | Send a private message |
 
----
-
 ## Logging & History
 
 | Command | Description |
@@ -65,18 +52,14 @@ This cheatsheet covers basic to intermediate IRC and Weechat usage, ideal for ne
 | `/set irc.server.<name>.sasl_password "<pass>"` | SASL password |
 | `/set irc.server.<name>.sasl_mechanism plain` | SASL mechanism (PLAIN) |
 
----
-
 ## Persistent Settings
 
 | Setting | Example |
 |---------|---------|
-| Auto-join channels | `/set irc.server.libera.autojoin "##security,#nmap"` |
+| Auto-join channels | `/set irc.server.libera.autojoin "#cybersecurity,#security,#linux,#python,#c,#ubuntu,#debian,#archlinux,#libera,#weechat"` |
 | Nick list | `/set irc.server.libera.nicks "YourNick,YourNick_,YourNick__"` |
 | Real name | `/set irc.server.libera.realname "John Doe"` |
 | Auto-connect | `/set irc.server.libera.autoconnect on` |
-
----
 
 ## Useful Scripts
 
@@ -87,7 +70,7 @@ This cheatsheet covers basic to intermediate IRC and Weechat usage, ideal for ne
 | `/script install buffers.pl` | Install buffer list sidebar |
 | `/buffers` | Show/hide sidebar (after installing `buffers.pl`) |
 
----
+## Weechat Doucumentation: https://weechat.org/doc/
 
 ## Tips
 
@@ -95,17 +78,7 @@ This cheatsheet covers basic to intermediate IRC and Weechat usage, ideal for ne
 - Lurk and observe before posting.
 - Use `/help <command>` for inline help.
 
----
+Reach out: https://guns.lol/january1073
 
-## Helpful Channels on Libera.Chat
 
-| Channel | Topic |
-|---------|-------|
-| `##security` | General infosec discussion |
-| `#nmap` | Network scanning with Nmap |
-| `##linux` | Linux users & help |
-| `#weechat` | Help with Weechat itself |
-| `#libera` | Network support |
-
----
 
