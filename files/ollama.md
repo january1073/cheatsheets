@@ -105,7 +105,7 @@ curl http://localhost:11434/api/generate -d '{
 
 ## Useful Models (as of August 2025, in alphabetical order)
 
-| Model (exact name)                     | Type                          | Notes (usefulness for web app/API testing)                                                                            |
+| Model                                  | Type                          | Notes                                                                                                                 |
 | -------------------------------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `codellama:7b-instruct`                | Code specialist               | One of the most reliable code models for Python, JS, and general API automation or testing.                           |
 | `deepseek-coder:6.7b`                  | Code specialist               | Strong for code generation, PoCs, and API client development.                                                         |
