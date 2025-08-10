@@ -15,46 +15,11 @@ Download from: [https://ollama.com/download](https://ollama.com/download)
 
 ## Basic Commands
 
-### List all local models
-
-```bash
-ollama list
-```
-
-### Pull (download) a model
-
-```bash
-ollama pull <model-name>
-```
-
-Example:
-
-```bash
-ollama pull llama3
-```
-
-### Run a model interactively
-
-```bash
-ollama run <model-name>
-```
-
-Example:
-
-```bash
-ollama run mistral
-```
-
-### Show active sessions
-```bash
-ollama ps
-```
-
-### Remove a model
-
-```bash
-ollama rm <model-name>
-```
+* `ollama list` shows installed models
+* `ollama pull <model>` downloads a model from the official Ollama registry
+* `ollama rm <model>` removes a model
+* `ollama run <model>` runs a model
+* `ollama ps` shows running sessions (usually empty)
 
 ---
 
