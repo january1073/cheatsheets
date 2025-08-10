@@ -79,7 +79,6 @@ curl http://localhost:11434/api/generate -d '{
 | `llava:7b`                               | Vision + text                 | Allows screenshot/UI analysis — useful in UI-assisted API testing or bug triage                                       |
 | `phi`                                    | Lightweight general           | Lightweight for quick checks, parsing, or embedding small reasoning in pipelines                                      |
 | `mistral:7b-instruct` / `mistral:latest` | General / fast                | Fast, strong reasoning; ideal for rapid test iterations and automation scripts                                        |
-| `mistral:latest`                         | Duplicate (likely same as 7b) | Redundant variant; minimal extra value over instruct version                                                          |
 | `mixtral`                                | General (Mixture-of-Experts)  | Good for multi-module reasoning and diverse API testing scenarios                                                     |
 | `qwen2.5:7b`                             | General purpose               | Strong all-rounder; excels at parsing prompts, API responses, and extracting structured data                          |
 | `qwen2.5-coder:7b`                       | Code specialist               | Better code generation than base Qwen; excellent for writing targeted test scripts                                    |
