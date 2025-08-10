@@ -45,16 +45,15 @@ Example:
 ollama run mistral
 ```
 
+### Show active sessions
+```bash
+ollama ps
+```
+
 ### Remove a model
 
 ```bash
 ollama rm <model-name>
-```
-
-### Show system info (models, disk usage)
-
-```bash
-ollama info
 ```
 
 ---
