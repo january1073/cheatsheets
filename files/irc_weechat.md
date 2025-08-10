@@ -1,5 +1,9 @@
 # IRC & Weechat Cheatsheet
 
+## Start Weechat
+
+`weechat`
+
 ## Setup Commands
 
 | Command | Description |
