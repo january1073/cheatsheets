@@ -77,15 +77,14 @@ curl http://localhost:11434/api/generate -d '{
 | `llama2:7b-chat`                         | General chat                  | Standard chat model; functional but outclassed by newer models for testing workflows                                  |
 | `llama3.1:8b`                            | General chat / reasoning      | High instruction-following quality and context handling; useful for complex testing scenarios                         |
 | `llava:7b`                               | Vision + text                 | Allows screenshot/UI analysis — useful in UI-assisted API testing or bug triage                                       |
-| `microsoft/phi-1_5`                      | Lightweight general           | Lightweight for quick checks, parsing, or embedding small reasoning in pipelines                                      |
+| `phi`                                    | Lightweight general           | Lightweight for quick checks, parsing, or embedding small reasoning in pipelines                                      |
 | `mistral:7b-instruct` / `mistral:latest` | General / fast                | Fast, strong reasoning; ideal for rapid test iterations and automation scripts                                        |
 | `mistral:latest`                         | Duplicate (likely same as 7b) | Redundant variant; minimal extra value over instruct version                                                          |
-| `mistralai/Mixtral-8x7B-Instruct-v0.1`   | General (Mixture-of-Experts)  | Good for multi-module reasoning and diverse API testing scenarios                                                     |
+| `mixtral`                                | General (Mixture-of-Experts)  | Good for multi-module reasoning and diverse API testing scenarios                                                     |
 | `qwen2.5:7b`                             | General purpose               | Strong all-rounder; excels at parsing prompts, API responses, and extracting structured data                          |
 | `qwen2.5-coder:7b`                       | Code specialist               | Better code generation than base Qwen; excellent for writing targeted test scripts                                    |
-| `TinyLlama/TinyLlama-1.1B-Chat-v1.0`     | Lightweight chat              | Minimal model for ultra-fast local testing, debugging, or quick response parsing                                      |
+| `tinyllama`                              | Lightweight chat              | Minimal model for ultra-fast local testing, debugging, or quick response parsing                                      |
 | `wizardcoder:7b-python`                  | Code specialist               | Python-focused, ideal for fuzzers, test frameworks, and exploit scripts                                               |
-
 
 ---
 
