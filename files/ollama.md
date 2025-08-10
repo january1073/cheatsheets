@@ -2,7 +2,7 @@
 
 ## Installation
 
-### macOS / Linux (Debian-based)
+### Linux (Debian-based) / macOS
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ````
