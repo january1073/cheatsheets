@@ -11,18 +11,4 @@
 | [Wireshark](https://github.com/january1073/cheatsheets/blob/main/files/wireshark.md) | GUI-based packet analyzer; useful for in-depth network protocol analysis, real-time traffic capture, and troubleshooting complex network issues | ![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white) |
 | [Wireshark Display Filters (Examples)](https://github.com/january1073/cheatsheets/blob/main/files/wireshark_dfilters.md) | Examples of security-related display filters for Wireshark | ![Collection](https://img.shields.io/badge/Collection-DC143C?style=flat-square&logoColor=white) ![Credential Access](https://img.shields.io/badge/Credential%20Access-DC143C?style=flat-square&logoColor=white) ![Discovery](https://img.shields.io/badge/Discovery-DC143C?style=flat-square&logoColor=white) |
 
-## Productivity
-* [bat, fzf, & eza](https://github.com/january1073/cheatsheets/blob/main/files/bat_fzf_eza.md)
-* [Docker](https://github.com/january1073/cheatsheets/blob/main/files/docker.md)
-* [Git, GitHub & GitLab](https://github.com/january1073/cheatsheets/blob/main/files/git_github_gitlab.md)
-* [IRC & Weechat](https://github.com/january1073/cheatsheets/blob/main/files/irc_weechat.md)
-* [Linux System Recon](https://github.com/january1073/cheatsheets/blob/main/files/linux_recon.md)
-* [Linux Terminal](https://github.com/january1073/cheatsheets/blob/main/files/linux_terminal.md)
-* [Ollama](https://github.com/january1073/cheatsheets/blob/main/files/ollama.md)
-* [Regex](https://github.com/january1073/cheatsheets/blob/main/files/regex.md)
-* [SSH & SCP](https://github.com/january1073/cheatsheets/blob/main/files/ssh_scp.md)
-* [Vim](https://github.com/january1073/cheatsheets/blob/main/files/vim.md)
-* [VirtualBox](https://github.com/january1073/cheatsheets/blob/main/files/virtualbox.md)
-* [XAMPP](https://github.com/january1073/cheatsheets/blob/main/files/xampp.md)
-
 Reach out: https://guns.lol/january1073
